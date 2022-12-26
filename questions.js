@@ -30,32 +30,53 @@ const qanda = [
     ],
   },
 ];
-
+//Add the total number of questions to the correct div
 let totalNumQ = document.getElementById("totalScore");
 let totalNumberofQuestions = qanda.length;
 totalNumQ.innerHTML = totalNumberofQuestions;
 
+// function setQuestion(currentQuestionArray){
+// }
+startButton.addEventListener("click", startGame);
 
+async function questionIterator() {
 
-function setQuestion(currentQuestionArray){
-    }
-
-function questionIterator() {
   // this grabs the qanda questionNumber
   for (let i = 0; i < qanda.length; i++) {
     let currentQuestionArray = qanda[i];
-    let thisQuestionArray = currentQuestionArray.question;
-    console.log(`${thisQuestionArray}'s answers: `);
+    let currentQuestion = currentQuestionArray.question;
+    let questionElement = document.createElement("h3");
+    let questionText = currentQuestion;
+    document
+      .getElementById("questionContainer")
+      .appendChild(questionElement);
+    questionElement.innerHTML = questionText;
+    // console.log(`${currentQuestion}'s answers: `);
 
     for (const currrentAnswersArray of currentQuestionArray.answers) {
       let oneAnswer = currrentAnswersArray.answer;
-      console.log(`oneAnswer = ${oneAnswer}`); //this is the variable for one of the answers from the current questions
+      let answerElement = document.createElement("button");
+      answerElement.classList.add("answer");
+      let answerText = oneAnswer;
+      // console.log(`oneAnswer = ${oneAnswer}`);
+
+
+      document.getElementById("answers").appendChild(answerElement);
+      answerElement.innerHTML = answerText;
+      // console.log(${currrentAnswersArray})
+      // console.log(`oneAnswer = ${oneAnswer}`); //this is the variable for one of the answers from the current questions
+
+      // questionIterator(qanda); //use this to invoke the iteration of questions
+
+      function addQandAText() {
+       
+
+     
+      }
+      addQandAText();
     }
   }
 }
-
-questionIterator(qanda); //use this to invoke the iteration of questions
-
 
 // function setAnswers(){
 //   let tID = 1;
@@ -64,31 +85,26 @@ questionIterator(qanda); //use this to invoke the iteration of questions
 //   let answerText = currentQ.answers;
 //   // currentQ.answers.forEach(){
 //   //     return answerArray
-//   //     } 
+//   //     }
 //   answerElement.innerHTML = answerText;
 //   document.getElementById("answerContainer").appendChild(answerElement)
 
 // }
 
-
-
-
-
-
 // const startButton = document.getElementById("startButton")
-// startButton.addEventListener("click", 
+// startButton.addEventListener("click",
 //   questionIterator(qanda)
-// ) 
+// )
 
-   // function setQuestion(thisQuestionNumber) {
-    //   if ((thisQuestionNumber = 0)) {
-    //     console.log(`thisQuestionNumber is equal to 0`);
-    //   } else if ((thisQuestionNumber = i)) {
-    //     console.log(
-    //       `thisQuestionNumber is a value for the array equal to qanda[${thisQuestionNumber}]`
-    //     );
-    //   } else {
-    //     console.log("setQuestion() error");
-    //   }
-    //   setQuestion(thisQuestionNumber); //put the iteration in here to grab the array
-    // }
+// function setQuestion(thisQuestionNumber) {
+//   if ((thisQuestionNumber = 0)) {
+//     console.log(`thisQuestionNumber is equal to 0`);
+//   } else if ((thisQuestionNumber = i)) {
+//     console.log(
+//       `thisQuestionNumber is a value for the array equal to qanda[${thisQuestionNumber}]`
+//     );
+//   } else {
+//     console.log("setQuestion() error");
+//   }
+//   setQuestion(thisQuestionNumber); //put the iteration in here to grab the array
+// }

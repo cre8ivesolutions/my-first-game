@@ -8,56 +8,48 @@
     <title>Coding Quizzle</title>
   </head>
   <body>
-    <div id="body">
+    <h1>Coding Basics Quizzle</h1>
+    <br />
+    <div id="startScreen">
       <header>
-        <h1>Coding Basics Quizzle</h1>
-        <br />
         <img
-        id="quizTime"
-        src="./public/quiz-background.webp"
-        alt="quiz time gif"
-        width="350px"
+          id="quizTime"
+          src="./public/quiz-background.webp"
+          alt="quiz time gif"
+          width="350px"
         />
       </header>
-
-      <div id="startBtnSection">
-        <button id="startButton" >CLICK TO START</button>
-      </div>
-      <main>
-        <div id="questionContainer">
-          <h3>QUESTION</h3>
-          <div id="question">
-            Question 1 ........................ .....................
-            ......................
-          </div>
-        </div>
-        <hr />
-        <div id="answerContainer">
-          <h3>ANSWERS</h3>
-          <div id="answers">
-            <button id="answer">answer 1</button>
-            <button id="answer">answer 2</button>
-            <button id="answer">answer 3</button>
-            <button id="answer">answer 4</button>
-          </div>
-        </div>
-        <hr />
-        <div id="buttons">
-          <button id="backButton">back</button>
-          <button id="next">next</button>
-        </div>
-        
-        <div id="scoreSection">
-          <u>Score</u>
-          <div id="scoreTracking">
-
-            <div id="score" label="# correct" value="score">0</div>
-            <div id="totalScore" value="totalScore"></div>
-
-          </div>
-        </div>
+      <!-- <div id="startBtnSection"> -->
+      <br />
+      <button id="startButton">CLICK TO START</button>
+      <!-- </div> -->
     </div>
-</main>
-<script src="./questions.js"></script>
-</body>
+    <main id="quizContainer" class="hide">
+      <div id="questionContainer"></div>
+      <hr />
+      <div id="answerContainer">
+        <h3>ANSWERS</h3>
+        <div id="answers">
+          <!-- <button id="answer">answer 1</button>
+          <button id="answer">answer 2</button>
+          <button id="answer">answer 3</button>
+          <button id="answer">answer 4</button> -->
+        </div>
+        <hr />
+      </div>
+      <div id="buttonContainer">
+        <button id="backButton">back</button>
+        <button id="nextButton">next</button>
+      </div>
+      <div id="scoreContainer">
+        <h3>SCORE</h3>
+        <div id="scoreTracking">
+          <div id="score" label="# correct" value="score">0</div>
+          <div id="totalScore" value="totalScore"></div>
+        </div>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+    <script src="./questions.js"></script>
+  </body>
 </html>

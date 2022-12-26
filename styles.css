@@ -6,7 +6,7 @@
   padding: .5em;
   margin: .5em;
 }
-#answer {
+.answer {
   min-width: 70vw;
 }
 button:hover {
@@ -42,7 +42,7 @@ button {
 
 #score, #totalScore {
   display: flexbox;
-  min-width: 10vw;
+  min-width: 5vw;
   outline:1px solid #134f98; 
   border-radius: .75em;
   font-weight: 800;
@@ -55,7 +55,7 @@ div {
 .hide {
   display: none;
 }
-header {
+h1 {
   text-shadow: 2px 2px 5px  #ffb227;
 }
 img {
