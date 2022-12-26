@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Coding Basics</h1>
-    <div id="questions"></div>
-    <div id="answers"></div>
-    <div id="buttons"> <button id=next></button></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Coding Quizzle</title>
+  </head>
+  <body>
+    <div id="body">
+      <header>
+        <h1>Coding Basics Quizzle</h1>
+        <br />
+        <img
+        id="quizTime"
+        src="./public/quiz-background.webp"
+        alt="quiz time gif"
+        width="350px"
+        />
+      </header>
+
+      <div id="startBtnSection">
+        <button id="startButton" >CLICK TO START</button>
+      </div>
+      <main>
+        <div id="questionContainer">
+          <h3>QUESTION</h3>
+          <div id="question">
+            Question 1 ........................ .....................
+            ......................
+          </div>
+        </div>
+        <hr />
+        <div id="answerContainer">
+          <h3>ANSWERS</h3>
+          <div id="answers">
+            <button id="answer">answer 1</button>
+            <button id="answer">answer 2</button>
+            <button id="answer">answer 3</button>
+            <button id="answer">answer 4</button>
+          </div>
+        </div>
+        <hr />
+        <div id="buttons">
+          <button id="backButton">back</button>
+          <button id="next">next</button>
+        </div>
+        
+        <div id="scoreSection">
+          <u>Score</u>
+          <div id="scoreTracking">
+
+            <div id="score" label="# correct" value="score"><p>0</p></div>
+            <div id="totalScore" value="totalScore"><p>10</p></div>
+
+          </div>
+        </div>
+    </div>
+</main>
+<script type="module"src="./questions.js"></script>
 </body>
-<div>
-  
-</div>
 </html>

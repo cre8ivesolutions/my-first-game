@@ -1,0 +1,24 @@
+{
+  "name": "tammysmilestonegame",
+  "version": "1.0.0",
+  "description": "This is my second attempt to create my first milestone game.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "node index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cre8ivesolutions/my-first-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cre8ivesolutions/my-first-game/issues"
+  },
+  "homepage": "https://github.com/cre8ivesolutions/my-first-game#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
