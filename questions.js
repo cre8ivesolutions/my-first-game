@@ -1,15 +1,17 @@
 const qanda = [
   {
+    id: 0,
     questionNumber: 1,
     question: "This is the first question?",
     answers: [
-      { id: 1, answer: "1 first answer" },
+      { id: 1, answer: "1 first answer", type: "correct" },
       { id: 2, answer: "1 second answer" },
       { id: 3, answer: "1 third answer" },
       { id: 4, answer: "1 fourth answer" },
     ],
   },
   {
+    id: 1,
     questionNumber: 2,
     question: "This is the second question?",
     answers: [
@@ -20,6 +22,7 @@ const qanda = [
     ],
   },
   {
+    id: 2,
     questionNumber: 3,
     question: "This is the third question?",
     answers: [
@@ -30,81 +33,54 @@ const qanda = [
     ],
   },
 ];
-//Add the total number of questions to the correct div
+
+//Display the total # of questions to the correct div
 let totalNumQ = document.getElementById("totalScore");
 let totalNumberofQuestions = qanda.length;
 totalNumQ.innerHTML = totalNumberofQuestions;
 
-// function setQuestion(currentQuestionArray){
-// }
+//Add the total # corret to the correct div
+let startNumCorrect = document.getElementById("score");
+let numCorrect = (startNumCorrect.innerHTML = 0);
+
+//start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
 
-async function questionIterator() {
-
-  // this grabs the qanda questionNumber
+//Iterate over the q and a's to populate
+function questionIterator() {
   for (let i = 0; i < qanda.length; i++) {
-    let currentQuestionArray = qanda[i];
-    let currentQuestion = currentQuestionArray.question;
-    let questionElement = document.createElement("h3");
-    let questionText = currentQuestion;
-    document
-      .getElementById("questionContainer")
-      .appendChild(questionElement);
-    questionElement.innerHTML = questionText;
-    // console.log(`${currentQuestion}'s answers: `);
+    currentQuestionArray = qanda[i];
+  }
+}
+//the below code works to display the first question
+// let i = 0;
+// let currentQuestionArray = qanda[i];
 
-    for (const currrentAnswersArray of currentQuestionArray.answers) {
-      let oneAnswer = currrentAnswersArray.answer;
-      let answerElement = document.createElement("button");
-      answerElement.classList.add("answer");
-      let answerText = oneAnswer;
-      // console.log(`oneAnswer = ${oneAnswer}`);
+//populate q and a's
+function displayQandA() {
+  questionIterator();
+  let currentQuestion = currentQuestionArray.question;
+  let questionElement = document.createElement("h3");
+  let questionText = currentQuestion;
+  document.getElementById("questions").appendChild(questionElement);
+  questionElement.innerHTML = questionText;
+  // console.log(`${currentQuestion}'s answers: `);
 
+  for (const currrentAnswersArray of currentQuestionArray.answers) {
+    let answerText = currrentAnswersArray.answer;
+    let answerElement = document.createElement("button");
+    answerElement.classList.add("answer");
 
-      document.getElementById("answers").appendChild(answerElement);
-      answerElement.innerHTML = answerText;
-      // console.log(${currrentAnswersArray})
-      // console.log(`oneAnswer = ${oneAnswer}`); //this is the variable for one of the answers from the current questions
+    document.getElementById("answers").appendChild(answerElement);
+    answerElement.innerHTML = answerText;
 
-      // questionIterator(qanda); //use this to invoke the iteration of questions
-
-      function addQandAText() {
-       
-
-     
-      }
-      addQandAText();
-    }
+    // function addQandAText() {}
+    // addQandAText();
   }
 }
 
-// function setAnswers(){
-//   let tID = 1;
-//   const currentQ = qAndA.find((t) => t.id === tID);
-//   let answerElement = document.createElement("h3");
-//   let answerText = currentQ.answers;
-//   // currentQ.answers.forEach(){
-//   //     return answerArray
-//   //     }
-//   answerElement.innerHTML = answerText;
-//   document.getElementById("answerContainer").appendChild(answerElement)
-
-// }
-
-// const startButton = document.getElementById("startButton")
-// startButton.addEventListener("click",
-//   questionIterator(qanda)
-// )
-
-// function setQuestion(thisQuestionNumber) {
-//   if ((thisQuestionNumber = 0)) {
-//     console.log(`thisQuestionNumber is equal to 0`);
-//   } else if ((thisQuestionNumber = i)) {
-//     console.log(
-//       `thisQuestionNumber is a value for the array equal to qanda[${thisQuestionNumber}]`
-//     );
-//   } else {
-//     console.log("setQuestion() error");
-//   }
-//   setQuestion(thisQuestionNumber); //put the iteration in here to grab the array
+// nextButton.addEventListener("click", nextButtonFunction)
+// function nextButtonFunction(qNum) {
+//   qNum + 1;
+//   console.log(qNum);
 // }
