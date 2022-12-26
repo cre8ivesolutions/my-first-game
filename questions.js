@@ -31,12 +31,14 @@ const qanda = [
   },
 ];
 
-const totalNumberofQuestions = qanda.length;
-console.log(totalNumberofQuestions)
+let totalNumQ = document.getElementById("totalScore");
+let totalNumberofQuestions = qanda.length;
+totalNumQ.innerHTML = totalNumberofQuestions;
+
+
 
 function setQuestion(currentQuestionArray){
-  
-}
+    }
 
 function questionIterator() {
   // this grabs the qanda questionNumber
@@ -55,18 +57,18 @@ function questionIterator() {
 questionIterator(qanda); //use this to invoke the iteration of questions
 
 
-function setAnswers(){
-  let tID = 1;
-  const currentQ = qAndA.find((t) => t.id === tID);
-  let answerElement = document.createElement("h3");
-  let answerText = currentQ.answers;
-  // currentQ.answers.forEach(){
-  //     return answerArray
-  //     } 
-  answerElement.innerHTML = answerText;
-  document.getElementById("answerContainer").appendChild(answerElement)
+// function setAnswers(){
+//   let tID = 1;
+//   const currentQ = qAndA.find((t) => t.id === tID);
+//   let answerElement = document.createElement("h3");
+//   let answerText = currentQ.answers;
+//   // currentQ.answers.forEach(){
+//   //     return answerArray
+//   //     } 
+//   answerElement.innerHTML = answerText;
+//   document.getElementById("answerContainer").appendChild(answerElement)
 
-}
+// }
 
 
 

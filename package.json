@@ -4,8 +4,8 @@
   "description": "This is my second attempt to create my first milestone game.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "start": "node index.html"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/cre8ivesolutions/my-first-game#readme",
   "dependencies": {
+    "live-server": "^1.2.2",
     "nodemon": "^2.0.20"
   }
 }
