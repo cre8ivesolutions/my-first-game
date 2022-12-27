@@ -128,12 +128,13 @@ const qanda = [
   },
 ];
 
-//Display the total # of questions to the correct score div
+const qandaArray = qanda;
+// //Display the total # of questions to the correct score div
 let totalNumQ = document.getElementById("totalScore");
 let totalNumberofQuestions = qanda.length;
 totalNumQ.innerHTML = totalNumberofQuestions;
 
-//start the game and populate the questions with the start button
+// //start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
 
 //populate q and a's
@@ -144,20 +145,21 @@ function displayQandA() {
   let currentQuestion = currentQuestionArray.question;
   let questionElement = document.createElement("h3");
   let questionText = currentQuestion;
+
   document.getElementById("questions").appendChild(questionElement);
   questionElement.innerHTML = questionText;
   console.log(`${currentQuestion}'s answers: `);
 
   for (const currrentAnswersArray of currentQuestionArray.answers) {
-    let answerText = currrentAnswersArray.answer;
+    let answerArray = currrentAnswersArray.answer;
     let answerElement = document.createElement("button");
+
     answerElement.classList.add("answer");
     document.getElementById("answers").appendChild(answerElement);
-    answerElement.innerHTML = answerText;
-    console.log(`${answerText}`);
+    answerElement.innerHTML = answerArray;
   }
 }
-
+//moved this entire function to main.js
 function checkAnswer() { //this function is used in html onClick
   for (currrentAnswersArray of currentQuestionArray.answers) {
     let type = currrentAnswersArray.type; //this is wrong.
@@ -173,19 +175,52 @@ function checkAnswer() { //this function is used in html onClick
     }
     numCorrect;
   }
-i++, console.log(i);
-
-  //the below code isnt working. it is supposed to make it so that the i++ only happens once
-  // setTimeout(() => {
-  //   parent.removeEventListener("click", checkAnswer)
-  // }, 100);
-  // Another way to try this is with the below code
-  // {once=true}
 }
-console.log(i);
+// console.log(i);
 
-// nextButton.addEventListener("click", nextButtonFunction)
-// function nextButtonFunction(qNum) {
-//   qNum + 1;
-//   console.log(qNum);
-// }
+nextButton.addEventListener("click", nextButtonFunction)
+
+
+function nextButtonFunction() {
+  // let qNum=0;
+  // qNum++;
+  // console.log(`qNum= ${qNum}`);
+  // console.log(`i = ${i}`);
+  for(let i=0; i<qanda.length; i++){
+  if (i<qanda.length){
+    i;
+    console.log(`this is i = ${i}`)
+  } else {
+    console.log (`i is greater than qanda.length`)
+  }
+}
+}
+
+function displayNextQ(){
+
+}
+
+  
+//the below code isnt working. it is supposed to make it so that the i++ only happens once
+// setTimeout(() => {
+//   parent.removeEventListener("click", checkAnswer)
+// }, 100);
+// Another way to try this is with the below code
+// {once=true}
+
+  
+  // answerArray.forEach((createAnswer)=>{
+  //   // for (let i=0; i<answerArray.length; i++){
+  //     let j = 0;
+  //     let answerElement = document.createElement("button");
+  
+  //       answerElement.firstElementChil.add("a" + j)
+  //       document.getElementById("answers").appendChild(answerElement);
+  //       answerElement.innerHTML = createAnswer;
+  //       console.log(`${answerArray}`);
+  //       // }
+  //   })
+    // console.log(createAnswer)
+  
+  
+  
