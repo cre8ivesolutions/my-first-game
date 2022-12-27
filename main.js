@@ -11,4 +11,5 @@ function startGame() {
   quizContainer.classList.remove("hide");
   startScreen.classList.add("hide");
   displayQandA(qanda);
+  // test()
 }
