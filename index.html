@@ -9,7 +9,6 @@
   </head>
   <body>
     <h1>Coding Basics Quizzle</h1>
-    <br />
     <div id="startScreen">
       <header>
         <img
@@ -36,17 +35,20 @@
         </div>
         <hr />
       </div>
-      <div id="buttonContainer">
-        <button id="backButton">back</button>
-        <!-- <button id="submitButton">Submit Answer</button> -->
-        <button id="nextButton">next</button>
-      </div>
       <div id="scoreContainer">
-        <h3>SCORE</h3>
-        <div id="scoreTracking">
+        <h4>YOUR SCORE:</h4>
+        <div class="scoreTracking">
           <div id="score" label="# correct" value="score">0</div>
+          </div>
+          <h4>POSSIBLE POINTS:</h4>
+          <div class="scoreTracking">
           <div id="totalScore" value="totalScore"></div>
         </div>
+      </div>
+      <div id="buttonContainer">
+        <button id="backButton" onClick="history.back()"> back </button>
+        <!-- <button id="submitButton">Submit Answer</button> -->
+        <button id="nextButton">next</button>
       </div>
     </main>
     <script src="./main.js"></script>
