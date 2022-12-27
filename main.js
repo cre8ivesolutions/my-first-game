@@ -3,11 +3,9 @@
 let startButton = document.getElementById("startButton");
 let startScreen = document.getElementById("startScreen");
 let quizConstainer = document.getElementById("quizContainer");
-// let submitButton = document.getElementById("submitButton");
 let nextButton = document.getElementById("nextButton");
 let backButton = document.getElementById("backButton");
 let answerButton = document.getElementsByClassName("answer");
-// let qandaArray = qanda;
 
 
 function startGame() {
@@ -15,12 +13,11 @@ function startGame() {
   startScreen.classList.add("hide");
   console.log(`i= ${i}`)
   // console.log(`numCorrect=${numCorrect}`)
-  displayQandA(qandaArray);
+  displayQandA(qanda);
 
   // test()
 }
 
-// const qandaArray = qanda;
 
 //Display the total # of questions to the correct score div
 // let totalNumQ = document.getElementById("totalScore");

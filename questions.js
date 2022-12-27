@@ -137,19 +137,22 @@ totalNumQ.innerHTML = totalNumberofQuestions;
 // //start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
 
-//populate q and a's
-let i = 0; //this is a placeholder used on the next line
-let currentQuestionArray = qanda[i]; 
+// iterate
+let i = 0; //this is used for the first questions array
+let currentQuestionArray = qanda[i];
 
+//variables to populate q and a's
+
+//populate q and a's
 function displayQandA() {
   let currentQuestion = currentQuestionArray.question;
   let questionElement = document.createElement("h3");
   let questionText = currentQuestion;
-
+  
   document.getElementById("questions").appendChild(questionElement);
   questionElement.innerHTML = questionText;
-  console.log(`${currentQuestion}'s answers: `);
-
+  // console.log(`${currentQuestion}'s answers: `);
+  
   for (const currrentAnswersArray of currentQuestionArray.answers) {
     let answerArray = currrentAnswersArray.answer;
     let answerElement = document.createElement("button");
@@ -171,34 +174,53 @@ function checkAnswer() { //this function is used in html onClick
       numCorrectContainer.innerHTML = numCorrect;
       console.log(`numCorrect = ${numCorrect}`);
     } else {
-      console.log("The answer is incorrect");
+      // console.log("The answer is incorrect");
     }
     numCorrect;
   }
 }
 // console.log(i);
 
+//the below code is used to iterate over the answers
+function incrementValue(){
+  i++;
+  setNextQuestion(i);
+}
+console.log(`after incrementValue i = ${i}`)
+
+//this function grabs the next questions array, use it after the first question
+function setNextQuestion(a){
+  // let button = document.getElementsByClassName("answer")
+  // let parentElement = document.getElementById("answers")
+  // parentElement.removeChild(innerHTML);
+
+  let newCurrentQuestionArray = qanda[a];
+  // displayQandA(qanda)
+
+  // console.log(`qanda[i] is ${nextQ}`)
+}
+
 nextButton.addEventListener("click", nextButtonFunction)
 
 
 function nextButtonFunction() {
-  // let qNum=0;
-  // qNum++;
-  // console.log(`qNum= ${qNum}`);
-  // console.log(`i = ${i}`);
-  for(let i=0; i<qanda.length; i++){
   if (i<qanda.length){
-    i;
-    console.log(`this is i = ${i}`)
+    incrementValue()
+    setNextQuestion(i)
+    console.log(`setNextQuestion argument is ${i}`)
+    // displayNextQ(qanda)
   } else {
     console.log (`i is greater than qanda.length`)
   }
-}
+  console.log(`the return value of i from nextButton= ${i}`)
+  return i
 }
 
-function displayNextQ(){
-
-}
+// function displayNextQ(qanda){
+//   let nextQ = currentQuestionArray;
+//   displayQandA(qanda);
+//   console.log(nextQ)
+// }
 
   
 //the below code isnt working. it is supposed to make it so that the i++ only happens once
