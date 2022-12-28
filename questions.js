@@ -137,27 +137,27 @@ const qanda = [
   },
 ];
 
-let startButton = document.getElementById("startButton");
-let startScreen = document.getElementById("startScreen");
-let quizContainer = document.getElementById("quizContainer");
-let backButton = document.getElementById("backButton");
-//grab existing buttons so an event listener can be utilized on them
-let answerElement1 = document.getElementById("a0");
-let answerElement2 = document.getElementById("a1");
-let answerElement3 = document.getElementById("a2");
-let answerElement4 = document.getElementById("a3");
-let answerButtons = [
+//global variables
+const startButton = document.getElementById("startButton");
+const startScreen = document.getElementById("startScreen");
+const quizContainer = document.getElementById("quizContainer");
+const backButton = document.getElementById("backButton");
+const answerElement1 = document.getElementById("a0");
+const answerElement2 = document.getElementById("a1");
+const answerElement3 = document.getElementById("a2");
+const answerElement4 = document.getElementById("a3");
+const answerButtons = [
   answerElement1,
   answerElement2,
   answerElement3,
   answerElement4
 ];
 
-//variables to populate q and a's
+//global variables to populate q and a's
 let i = 0; //this is for the 1st questions array
-let currentQuestionArray = qanda[i];
-let currentQuestion = currentQuestionArray.question;
-let currentAnswersArray = currentQuestionArray.answers;
+const currentQuestionArray = qanda[i];
+const currentQuestion = currentQuestionArray.question;
+const currentAnswersArray = currentQuestionArray.answers;
 
 // //Display the total # of questions to the correct score div
 let totalNumQ = document.getElementById("totalScore");
@@ -167,15 +167,20 @@ totalNumQ.innerHTML = totalNumberofQuestions;
 // //start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
 
-// click on an answer button
-answerElement1.addEventListener("click", logCurrentAnswerArray);
-answerElement2.addEventListener("click", logCurrentAnswerArray);
-answerElement3.addEventListener("click", logCurrentAnswerArray);
-answerElement4.addEventListener("click", logCurrentAnswerArray);
+// click on an answer button. this should be set up to use the answerButton element = document.getElementByClassName("answer") but that doesnt work because the buttons are not accessible in the dom since they are not created until later
+answerElement1.addEventListener("click", testFunction);
+answerElement2.addEventListener("click", testFunction);
+answerElement3.addEventListener("click", testFunction);
+answerElement4.addEventListener("click", testFunction);
 
-function logCurrentAnswerArray() {
+//the answerButtons will call a function that will check if (answer.type ===("correct")){ numCorrect++, setNextQuestion(i)}
+
+//inside of setNextQuestion there will be a setting that says if (i+1===undefined){document.getElementById("quizContatiner") and className.add("hide") and getElementById("finalPageContainer") and className.remover("hide")}
+
+function testFunction() {
   console.log(currentAnswersArray);
 }
+//the testFunction currently displays the currentAnswersArray so that I can evaluate the properties of the array so I can target the value of the innerHTML to find the answer.type which will indicate if the answer is correct or incorrect. this will decide what will happen on the button click
 
 function startGame() {
   quizContainer.classList.remove("hide");
