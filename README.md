@@ -21,13 +21,21 @@ I used JavaScript to program the game.
 - I used the modern font-family 'system-ui' because it is a familiar font that is used on numerous Apple products.
 - I used one or two inline styles in the html file do demonstrate that I know how to use it.
 - I used css @keyframes to create animations to create interest on the landing page, the loading of the question, and to make the answer and next buttons responsive when hovering. 
-- 
 
 ### What's good
+- The biggest challenge was making the code DRY, and I believe I was able to achieve this. 
 - The game colors are accessible.
-- The game is responsive to different screen sizes because I used. 
+- The game is responsive to different screen sizes.
+- The start button displays the first question. 
+- The next button increments the variable by one. 
+- The score and total score divs are populating the correct numbers.
+- The questions and answers array of objects is able to produce the correct text in the correct element.
+- The answer buttons are able to produce the correct  
 ### What is not so good
-- Currently, the questions are not complete and after the third questions, all of the questions are the same. 
+- Currently, the question array is not complete because after the third questions, all of the questions are the same.
+- Currently, I am not able to display more than the first question. 
+- I currently do not have a final page that displays how well the person did at the end or allows them to "start over". 
+- All of the code was done in one file "questions.js" because I was not able to get the questions.js file or the constant representing the q and a array to import to a different file. 
 
 ## To start the game
 1. Open your terminal and enter the command: git clone https://github.com/cre8ivesolutions/my-first-game.git

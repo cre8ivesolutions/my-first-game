@@ -135,6 +135,8 @@ const answerButtons = document.getElementById
 const footer = document.querySelector("footer")
 
 //global variables to populate q and a's
+// This is where my problem with iterating happens
+//I need to use a callback function and return the updated currentQuestionArray
 let i = 0; //this is for the 1st questions array
 const currentQuestionArray = qanda[i];
 const currentQuestion = currentQuestionArray.question;
@@ -154,7 +156,7 @@ function startGame() {
   footer.classList.remove("hide");
   clearOldAnswers()
   console.log(`i= ${i}`);
-  // console.log(`numCorrect=${numCorrect}`)
+  console.log(`numCorrect=${numCorrect}`)
   displayQandA();
 }
 
@@ -183,6 +185,7 @@ function displayQandA() {
 
 function setNextQuestion(){
   clearOldAnswers()
+  // checkAnswer()
   // i++
   // let currentQuestionArray = (qanda[i]);
   // displayQandA()
@@ -200,11 +203,13 @@ function clearOldAnswers(){
   }
 }
 
+const numCorrectContainer = document.getElementById("score");
+let numCorrect = 0;
+numCorrectContainer.innerHTML = numCorrect;
+
 function checkAnswer() {
   const chosenAnswer = e.target;
   const correct = chosenAnswer.dataset.correct;
-  let numCorrectContainer = document.getElementById("score");
-  numCorrectContainer.innerHTML = numCorrect;
   // for (currentAnswersArray of currentQuestionArray.answers) {
     // let currentAnswersArray = currentQuestionArray.answers;
     // let correct: true,ersArray[target].correct: true,umCorrect = 0;
