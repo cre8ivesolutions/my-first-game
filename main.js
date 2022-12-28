@@ -1,22 +1,22 @@
 // let { qanda } =require('./questions')
 
-let startButton = document.getElementById("startButton");
-let startScreen = document.getElementById("startScreen");
-let quizConstainer = document.getElementById("quizContainer");
-let nextButton = document.getElementById("nextButton");
-let backButton = document.getElementById("backButton");
-let answerButton = document.getElementsByClassName("answer");
+// let startButton = document.getElementById("startButton");
+// let startScreen = document.getElementById("startScreen");
+// let quizContainer = document.getElementById("quizContainer");
+// let backButton = document.getElementById("backButton");
+// let nextButton = document.getElementById("nextButton");
+// let answerButton = document.getElementsByClassName("answer");
 
 
-function startGame() {
-  quizContainer.classList.remove("hide");
-  startScreen.classList.add("hide");
-  console.log(`i= ${i}`)
-  // console.log(`numCorrect=${numCorrect}`)
-  displayQandA(qanda);
+// function startGame() {
+//   quizContainer.classList.remove("hide");
+//   startScreen.classList.add("hide");
+//   // console.log(`i= ${i}`)
+//   // console.log(`numCorrect=${numCorrect}`)
+//   displayQandA(qanda);
 
-  // test()
-}
+//   // test()
+// }
 
 
 //Display the total # of questions to the correct score div
