@@ -131,20 +131,13 @@ const quizContainer = document.getElementById("quizContainer");
 const questionContainer = document.getElementById("question")
 const backButton = document.getElementById("backButton");
 const answerButtons = document.getElementById
-("answers")
-const footer = document.querySelector("footer")
-
-//global variables to populate q and a's
-// This is where my problem with iterating happens
-//I need to use a callback function and return the updated currentQuestionArray
-let i = 0; //this is for the 1st questions array
-const currentQuestionArray = qanda[i];
-const currentQuestion = currentQuestionArray.question;
-const currentAnswersArray = currentQuestionArray.answers;
-
-// //Display the total # of questions to the correct score div
+("answers");
+const nextButton = document.getElementById("nextButton");
+const footer = document.querySelector("footer");
 const totalNumQ = document.getElementById("totalScore");
 const totalNumberofQuestions = qanda.length;
+
+// //Display the total # of questions to the correct score div
 totalNumQ.innerHTML = totalNumberofQuestions;
 
 // //start the game and populate the questions with the start button
@@ -155,13 +148,22 @@ function startGame() {
   startScreen.classList.add("hide");
   footer.classList.remove("hide");
   clearOldAnswers()
+  displayQandA();
   console.log(`i= ${i}`);
   console.log(`numCorrect=${numCorrect}`)
-  displayQandA();
 }
 
+//global variables to populate q and a's
+// This is where my problem with iterating happens
+//I need to use a callback function and return the updated currentQuestionArray
+
+// for(let i = 0; i <qanda.length; i++){}
+let i = 0;
 //populate q and a's
 function displayQandA() {
+  const currentQuestionArray = qanda[i];
+  const currentQuestion = currentQuestionArray.question;
+  const currentAnswersArray = currentQuestionArray.answers;
   nextButton.classList.add("hide")
   // populate questions
   let questionElement = document.createElement("h3");
@@ -181,16 +183,15 @@ function displayQandA() {
     answerButton.addEventListener("click", setNextQuestion)
   })
 }
-// console.log(typeof(oneAnswer.correct))
 
-function setNextQuestion(){
-  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
+function setNextQuestion(a){
   clearOldAnswers()
-  // checkAnswer()
+  checkAnswer()
+  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
 }
 
 function clearOldAnswers(){
- nextButton.classList.remove("hide")
+  nextButton.classList.remove("hide")
   while (answerButtons.firstChild){
     answerButtons.removeChild(answerButtons.firstChild)
   }
@@ -203,28 +204,23 @@ const numCorrectContainer = document.getElementById("score");
 let numCorrect = 0;
 numCorrectContainer.innerHTML = numCorrect;
 
-// function checkAnswer(e) {
-//   const chosenAnswer = e.target;
-//   const correct = chosenAnswer.dataset.correct;
-//   // for (currentAnswersArray of currentQuestionArray.answers) {
-//     // let currentAnswersArray = currentQuestionArray.answers;
-//     // let correct: true,ersArray[target].correct: true,umCorrect = 0;
-//     if (correct) {
-//       numCorrect++;
-//       //Add the total # correct to the correct div
-//       console.log(`numCorrect = ${numCorrect}`);
-//     } else {
-//       console.log("The answer is incorrect");
-//     }
-//     numCorrect;
-//   // }
-// }
+function checkAnswer(e) {
+  const chosenAnswer = e;
+  const correct = chosenAnswer.dataset.correct;
+  if (correct) {
+    numCorrect++;
+    //Add the total # correct to the correct div
+    console.log(`numCorrect = ${numCorrect}`);
+  } else {
+    console.log("The answer is incorrect");
+  }
+  numCorrect;
+}
 
 //this function grabs the next questions array, use it after the first question
 // let button = document.getElementsByClassName("answer")
 // let parentElement = document.getElementById("answers")
 // parentElement.removeChild(innerHTML);
-
 
 //the below code is used to iterate over the answers
 function incrementValue() {
@@ -234,7 +230,6 @@ function incrementValue() {
 }
 
 //next button
-let nextButton = document.getElementById("nextButton");
 
 nextButton.addEventListener("click", nextButtonFunction);
 
