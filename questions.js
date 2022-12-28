@@ -74,52 +74,54 @@ const qanda = [
   },
   {
     id: 5,
-    question: "CSS: What is a 'normal' font weight?",
+    question: "Q6",
     answers: [
-      { answer: "100", correct: false},
-      { answer: "200", correct: false},
-      { answer: "400", correct: true},
-      { answer: "600", correct: false}
+      { answer: "A6", correct: false},
+      { answer: "A6 = correct", correct: true},
+      { answer: "A6", correct: false},
+      { answer: "A6", correct: false}
     ],
   },
   {
     id: 6,
-    question: "CSS: What is a 'normal' font weight?",
+    question: "Q7",
     answers: [
-      { answer: "100", correct: false},
-      { answer: "200", correct: false},
-      { answer: "400", correct: true},
-      { answer: "600", correct: false}
+      { answer: "A7", correct: false},
+      { answer: "A7", correct: false},
+      { answer: "A7", correct: false},
+      { answer: "A7 = correct", correct: true}
     ],
   },
   {
     id: 7,
-    question: "CSS: What is a 'normal' font weight?",
+    question: "Q8",
     answers: [
-      { answer: "100", correct: false},
-      { answer: "200", correct: false},
-      { answer: "400", correct: true},
-      { answer: "600", correct: false}
+      { answer: "A8 = correct", correct: true},
+      { answer: "A8", correct: false},
+      { answer: "A8", correct: false},
+      { answer: "A8", correct: false}
     ],
   },
   {
     id: 8,
     question: "CSS: What is a 'normal' font weight?",
+    question: "Q9",
     answers: [
-      { answer: "100", correct: false},
-      { answer: "200", correct: false},
-      { answer: "400", correct: true},
-      { answer: "600", correct: false}
+      { answer: "A9", correct: false},
+      { answer: "A9", correct: false},
+      { answer: "A9 = correct", correct: true},
+      { answer: "A9", correct: false}
     ],
   },
   {
     id: 9,
     question: "CSS: What is a 'normal' font weight?",
+    question: "Last question",
     answers: [
-      { answer: "100", correct: false},
-      { answer: "200", correct: false},
-      { answer: "400", correct: true},
-      { answer: "600", correct: false}
+      { answer: "last a", correct: false},
+      { answer: "a10", correct: false},
+      { answer: "a10 = correct", correct: true},
+      { answer: "a10", correct: false}
     ],
   },
 ];
@@ -142,32 +144,24 @@ totalNumQ.innerHTML = totalNumberofQuestions;
 
 // //start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
-
+let i =0;
 function startGame() {
   quizContainer.classList.remove("hide");
   startScreen.classList.add("hide");
   footer.classList.remove("hide");
   clearOldAnswers()
-  displayQandA();
-  console.log(`i= ${i}`);
-  console.log(`numCorrect=${numCorrect}`)
+  displayQandA(i);
 }
 
-//global variables to populate q and a's
-// This is where my problem with iterating happens
-//I need to use a callback function and return the updated currentQuestionArray
-
-// for(let i = 0; i <qanda.length; i++){}
-let i = 0;
 //populate q and a's
-function displayQandA() {
-  const currentQuestionArray = qanda[i];
+function displayQandA(b) {
+  let currentQuestionArray = qanda[b];
   const currentQuestion = currentQuestionArray.question;
   const currentAnswersArray = currentQuestionArray.answers;
   nextButton.classList.add("hide")
   // populate questions
-  let questionElement = document.createElement("h3");
-  let questionText = currentQuestion;
+  const questionElement = document.createElement("h3");
+  const questionText = currentQuestion;
   document.getElementById("question").appendChild(questionElement);
   questionElement.innerHTML = questionText;
   //populate answers
@@ -180,15 +174,27 @@ function displayQandA() {
       answerButton.dataset.correct = oneAnswer.correct
     }
     document.getElementById('answers').appendChild(answerButton)
-    answerButton.addEventListener("click", setNextQuestion)
+    answerButton.addEventListener("click", clickAnswer)
   })
 }
 
-function setNextQuestion(a){
-  clearOldAnswers()
-  checkAnswer()
-  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
+const numCorrectContainer = document.getElementById("score");
+let numCorrect = 0;
+function clickAnswer(){
+  // {once=true}//need a way to only let it click one time
+  nextButton.classList.remove("hide")
+  numCorrect++ //remove this once the checkAnswer function is working
+  //display current score
+  numCorrectContainer.innerHTML = numCorrect;
+  console.log(`numCorrect=${numCorrect}`)
 }
+
+// function setNextQuestion(){
+//   // checkAnswer();
+//   // clearOldAnswers();
+//   // checkAnswer()
+// //  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
+// }
 
 function clearOldAnswers(){
   nextButton.classList.remove("hide")
@@ -200,11 +206,7 @@ function clearOldAnswers(){
   }
 }
 
-const numCorrectContainer = document.getElementById("score");
-let numCorrect = 0;
-numCorrectContainer.innerHTML = numCorrect;
-
-function checkAnswer(e) {
+function checkAnswer(e) { //this is not working yet
   const chosenAnswer = e;
   const correct = chosenAnswer.dataset.correct;
   if (correct) {
@@ -214,44 +216,32 @@ function checkAnswer(e) {
   } else {
     console.log("The answer is incorrect");
   }
-  numCorrect;
 }
-
-//this function grabs the next questions array, use it after the first question
-// let button = document.getElementsByClassName("answer")
-// let parentElement = document.getElementById("answers")
-// parentElement.removeChild(innerHTML);
 
 //the below code is used to iterate over the answers
 function incrementValue() {
   i++;
   // setNextQuestion(i);
   console.log(`after incrementValue i = ${i}`);
+  return i
 }
 
 //next button
-
 nextButton.addEventListener("click", nextButtonFunction);
 
+let d = 0;
 function nextButtonFunction() {
-  if (i < qanda.length) {
-    incrementValue();
-    // setNextQuestion(i)
-    console.log(`setNextQuestion argument is ${i}`);
-    // displayNextQ(qanda)
-    // checkAnswer()
-  } else {
-    console.log(`i is greater than qanda.length`);
+  clearOldAnswers()
+  if (d < qanda.length) {
+      d++;
+      displayQandA(d)
+      console.log(`nextQuestionButton d= ${d}`);
+    } else if (d + 1 === "undefined") {
+    console.log(`the next page is the final page`);
   }
-  console.log(`the return value of i from nextButton= ${i}`);
-  return i;
+  console.log(`the return value of d from nextButton= ${d}`);
+  return d;
 }
-
-// function displayNextQ(qanda){
-//   let nextQ = currentQuestionArray;
-//   displayQandA(qanda);
-//   console.log(nextQ)
-// }
 
 //the below code isnt working. it is supposed to make it so that the i++ only happens once
 // setTimeout(() => {
@@ -259,16 +249,3 @@ function nextButtonFunction() {
 // }, 100);
 // Another way to try this is with the below code
 // {once=true}
-
-// answerText.forEach((createAnswer)=>{
-//   // for (let i=0; i<answerText.length; i++){
-//     let j = 0;
-//     let answerElement = document.createElement("button");
-
-//       answerElement.firstElementChil.add("a" + j)
-//       document.getElementById("answers").appendChild(answerElement);
-//       answerElement.innerHTML = createAnswer;
-//       console.log(`${answerText}`);
-//       // }
-//   })
-// console.log(createAnswer)

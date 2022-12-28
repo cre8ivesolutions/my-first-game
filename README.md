@@ -32,8 +32,7 @@ I used JavaScript to program the game.
 - The questions and answers array of objects is able to produce the correct text in the correct element.
 - The answer buttons are able to produce the correct  
 ### What is not so good
-- Currently, the question array is not complete because after the third questions, all of the questions are the same.
-- Currently, I am not able to display more than the first question. 
+- Currently, the question array is not complete because I am using placeholder text until I get it working.
 - I currently do not have a final page that displays how well the person did at the end or allows them to "start over". 
 - All of the code was done in one file "questions.js" because I was not able to get the questions.js file or the constant representing the q and a array to import to a different file. 
 
