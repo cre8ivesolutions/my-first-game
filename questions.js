@@ -4,26 +4,22 @@ const qanda = [
     question: "What is the correct way to get a button to invoke a function?",
     answers: [
       {
-        id: 1,
-        answer: `In html file, add 'onClick = "function()"`,
-        type: "correct",
+        answer: "In html file, add 'onClick = 'function()'",
+        correct: true 
       },
       {
-        id: 2,
-        answer: "In js file, add 'onclick=function()",
-        type: "incorrect",
+        answer: "In js file, add 'onclick=function()'",
+        correct: false
       },
       {
-        id: 3,
         answer:
           "The only way to do it is in a function that calls to the button",
-        type: "incorrect",
+        correct: false
       },
       {
-        id: 4,
         answer:
           "In js file, use 'addEventListener' along with 2 or 3 arguments",
-        type: "incorrect",
+        correct: false
       },
     ],
   },
@@ -32,46 +28,37 @@ const qanda = [
     question:
       "CSS: How do you move text under one element on the left, but not under the element on the right?",
     answers: [
-      { id: 1, answer: "float: left;", type: "incorrect" },
-      { id: 2, answer: "float: right;", type: "incorrect" },
-      { id: 3, answer: "clear: left;", type: "correct" },
-      { id: 4, answer: "float: right:", type: "incorrect" },
+      { answer: "float: left;", correct: false},
+      { answer: "float: right;", correct: false},
+      { answer: "clear: left;", correct: true},
+      { answer: "float: right:", correct: false}
     ],
   },
   {
     id: 2,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      {answer: "100", correct: false},
+      {answer: "200", correct: false},
+      {answer: "400", correct: true},
+      {answer: "600", correct: false}
     ],
   },
   {
     id: 3,
     question: "How does html know how to use the javascript file?",
     answers: [
-      {
-        id: 1,
-        answer: "It wil automatically use the index.js file.",
-        type: "incorrect",
+      {answer: "It wil automatically use the index.js file.",
+        correct: false
       },
-      {
-        id: 2,
-        answer: "You need to tell it what to use in the package.json files.",
-        type: "incorrect",
+      {answer: "You need to tell it what to use in the package.json files.",
+        correct: false
       },
-      {
-        id: 3,
-        answer:
+      {answer:
           "You need to tell it what to use in the head of the html file using the script tag.",
-        type: "correct",
-      },
-      {
-        id: 4,
-        answer: "You need to tell it what to usse in the javascript file.",
-        type: "incorrect",
+        correct: true},
+      {answer: "You need to tell it what to usse in the javascript file.",
+        correct: false
       },
     ],
   },
@@ -79,60 +66,60 @@ const qanda = [
     id: 4,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      {answer: "100", correct: false},
+      {answer: "200", correct: false},
+      {answer: "400", correct: true},
+      {answer: "600", correct: false}
     ],
   },
   {
     id: 5,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      { answer: "100", correct: false},
+      { answer: "200", correct: false},
+      { answer: "400", correct: true},
+      { answer: "600", correct: false}
     ],
   },
   {
     id: 6,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      { answer: "100", correct: false},
+      { answer: "200", correct: false},
+      { answer: "400", correct: true},
+      { answer: "600", correct: false}
     ],
   },
   {
     id: 7,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      { answer: "100", correct: false},
+      { answer: "200", correct: false},
+      { answer: "400", correct: true},
+      { answer: "600", correct: false}
     ],
   },
   {
     id: 8,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      { answer: "100", correct: false},
+      { answer: "200", correct: false},
+      { answer: "400", correct: true},
+      { answer: "600", correct: false}
     ],
   },
   {
     id: 9,
     question: "CSS: What is a 'normal' font weight?",
     answers: [
-      { id: 1, answer: "100", type: "incorrect" },
-      { id: 2, answer: "200", type: "incorrect" },
-      { id: 3, answer: "400", type: "correct" },
-      { id: 4, answer: "600", type: "incorrect" },
+      { answer: "100", correct: false},
+      { answer: "200", correct: false},
+      { answer: "400", correct: true},
+      { answer: "600", correct: false}
     ],
   },
 ];
@@ -141,17 +128,10 @@ const qanda = [
 const startButton = document.getElementById("startButton");
 const startScreen = document.getElementById("startScreen");
 const quizContainer = document.getElementById("quizContainer");
+const questionContainer = document.getElementById("question")
 const backButton = document.getElementById("backButton");
-const answerElement1 = document.getElementById("a0");
-const answerElement2 = document.getElementById("a1");
-const answerElement3 = document.getElementById("a2");
-const answerElement4 = document.getElementById("a3");
-const answerButtons = [
-  answerElement1,
-  answerElement2,
-  answerElement3,
-  answerElement4
-];
+const answerButtons = document.getElementById
+("answers")
 
 //global variables to populate q and a's
 let i = 0; //this is for the 1st questions array
@@ -160,69 +140,69 @@ const currentQuestion = currentQuestionArray.question;
 const currentAnswersArray = currentQuestionArray.answers;
 
 // //Display the total # of questions to the correct score div
-let totalNumQ = document.getElementById("totalScore");
-let totalNumberofQuestions = qanda.length;
+const totalNumQ = document.getElementById("totalScore");
+const totalNumberofQuestions = qanda.length;
 totalNumQ.innerHTML = totalNumberofQuestions;
 
 // //start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
 
-// click on an answer button. this should be set up to use the answerButton element = document.getElementByClassName("answer") but that doesnt work because the buttons are not accessible in the dom since they are not created until later
-answerElement1.addEventListener("click", testFunction);
-answerElement2.addEventListener("click", testFunction);
-answerElement3.addEventListener("click", testFunction);
-answerElement4.addEventListener("click", testFunction);
-
-//the answerButtons will call a function that will check if (answer.type ===("correct")){ numCorrect++, setNextQuestion(i)}
-
-//inside of setNextQuestion there will be a setting that says if (i+1===undefined){document.getElementById("quizContatiner") and className.add("hide") and getElementById("finalPageContainer") and className.remover("hide")}
-
-function testFunction() {
-  console.log(currentAnswersArray);
-}
-//the testFunction currently displays the currentAnswersArray so that I can evaluate the properties of the array so I can target the value of the innerHTML to find the answer.type which will indicate if the answer is correct or incorrect. this will decide what will happen on the button click
-
 function startGame() {
   quizContainer.classList.remove("hide");
   startScreen.classList.add("hide");
+  clearOldAnswers()
   console.log(`i= ${i}`);
   // console.log(`numCorrect=${numCorrect}`)
-  displayQandA(qanda);
-
-  // test()
+  displayQandA();
 }
 
 //populate q and a's
 function displayQandA() {
-  //grab the first item in the qanda array and display the first question
-  let questionElement = document.createElement("h3");
+  nextButton.classList.add("hide")
+  let questionElement = document.createElement("h2");
   let questionText = currentQuestion;
   //grab the existing question div
-  document.getElementById("questions").appendChild(questionElement);
+  document.getElementById("question").appendChild(questionElement);
   //add the text to the question element
   questionElement.innerHTML = questionText;
+  //answers
+  currentAnswersArray.forEach(oneAnswer=>{
+    const answerButton = document.createElement('button')
+    answerButton.classList.add('answer')
+    answerButton.innerText = oneAnswer.answer;
+    console.log(oneAnswer.answer)
+    document.getElementById('answers').appendChild(answerButton)
+    if (oneAnswer.answer.correct){
+      oneAnswer.answer.dataset.correct = oneAnswer.answer.correct
+    }
+    answerButton.addEventListener("click", setNextQuestion)
+  })
+  // console.log(answerText1);
+}
 
-  //separate the array into separate answers
-  let answerText1 = currentAnswersArray[0].answer;
-  let answerText2 = currentAnswersArray[1].answer;
-  let answerText3 = currentAnswersArray[2].answer;
-  let answerText4 = currentAnswersArray[3].answer;
+function setNextQuestion(){
+  clearOldAnswers()
+  // let currentQuestionArray = (qanda[i]);
+  displayQandA()
 
-  // add the text to the element
-  answerElement1.innerHTML = answerText1;
-  answerElement2.innerHTML = answerText2;
-  answerElement3.innerHTML = answerText3;
-  answerElement4.innerHTML = answerText4;
+  // console.log(`setNextQuestion value of a is ${a}`)
+}
 
-  console.log(answerText1);
+function clearOldAnswers(){
+ nextButton.classList.remove("hide")
+  while (answerButtons.firstChild){
+    answerButtons.removeChild(answerButtons.firstChild)
+  }
+  while (questionContainer.firstChild){
+    question.removeChild(questionContainer.firstChild)
+  }
 }
 
 // function checkAnswer(target) {
 //   // for (currentAnswersArray of currentQuestionArray.answers) {
 //     // let currentAnswersArray = currentQuestionArray.answers;
-//     let type = currentAnswersArray[target].type;
-//     let numCorrect = 0;
-//     if (type === "correct") {
+//     let correct: true,ersArray[target].correct: true,umCorrect = 0;
+//     if (correct: true,) {
 //       numCorrect++;
 //       //Add the total # correct to the correct div
 //       let numCorrectContainer = document.getElementById("score");
@@ -240,14 +220,6 @@ function displayQandA() {
 // let parentElement = document.getElementById("answers")
 // parentElement.removeChild(innerHTML);
 
-// function setNextQuestion(i){
-
-//   let currentQuestionArray = (qanda[i]);
-
-//   displayQandA(qanda)
-
-//   console.log(`setNextQuestion value of a is ${a}`)
-// }
 
 //the below code is used to iterate over the answers
 function incrementValue() {
