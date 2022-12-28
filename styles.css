@@ -23,6 +23,9 @@ div {
   margin: .2em;
   padding: .25em;
 }
+footer {
+  color: rgba(0, 0, 0, 0.698);
+}
 h1 {
   text-shadow: 2px 2px 5px  #ffb227;
 }

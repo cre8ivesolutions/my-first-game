@@ -13,7 +13,7 @@ This is my second attempt to create my first milestone game.
 I used JavaScript to program the game. 
 - I created objects, arrays, arrays of object, functions, and more. 
 - I also handled browser events, controlled flow, implemented loops and iteration, called functions, utilized arguments and parameters, and more. 
-- I also used at least one arrow function, used the Increment Operator, used at least one promise, and more.
+- I also used at least one arrow function, used the forEach function, used the Increment Operator, used at least one promise, and more.
 - I also accessed and updated the DOM to create elements and to add and remove classes.
 ### UX/UI
 - For the colors in the game, I used the website https://colorable.jxnblk.com/ to ensure that the contrast of the colors on the game pass the WCAG accessibility guidelines, which can be found at https://www.w3.org/TR/WCAG20/#visual-audio-contrast.

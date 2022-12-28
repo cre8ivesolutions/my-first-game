@@ -163,34 +163,30 @@ function startGame() {
 //populate q and a's
 function displayQandA() {
   nextButton.classList.add("hide")
+  // populate questions
   let questionElement = document.createElement("h3");
   let questionText = currentQuestion;
-  //grab the existing question div
   document.getElementById("question").appendChild(questionElement);
-  //add the text to the question element
   questionElement.innerHTML = questionText;
-  //answers
+  //populate answers
   currentAnswersArray.forEach(oneAnswer=>{
     const answerButton = document.createElement('button')
     answerButton.classList.add('answer')
     answerButton.innerText = oneAnswer.answer;
-    console.log(oneAnswer.answer)
-    document.getElementById('answers').appendChild(answerButton)
-    if (oneAnswer.answer.correct){
-      oneAnswer.answer.dataset.correct = oneAnswer.answer.correct
+    // console.log(`oneAnswer.correct = ${oneAnswer.correct}`)
+    if (oneAnswer.correct){
+      answerButton.dataset.correct = oneAnswer.correct
     }
+    document.getElementById('answers').appendChild(answerButton)
     answerButton.addEventListener("click", setNextQuestion)
   })
 }
+// console.log(typeof(oneAnswer.correct))
 
 function setNextQuestion(){
+  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
   clearOldAnswers()
   // checkAnswer()
-  // i++
-  // let currentQuestionArray = (qanda[i]);
-  // displayQandA()
-
-  // console.log(`setNextQuestion value of a is ${a}`)
 }
 
 function clearOldAnswers(){
@@ -207,22 +203,22 @@ const numCorrectContainer = document.getElementById("score");
 let numCorrect = 0;
 numCorrectContainer.innerHTML = numCorrect;
 
-function checkAnswer() {
-  const chosenAnswer = e.target;
-  const correct = chosenAnswer.dataset.correct;
-  // for (currentAnswersArray of currentQuestionArray.answers) {
-    // let currentAnswersArray = currentQuestionArray.answers;
-    // let correct: true,ersArray[target].correct: true,umCorrect = 0;
-    if (correct) {
-      numCorrect++;
-      //Add the total # correct to the correct div
-      console.log(`numCorrect = ${numCorrect}`);
-    } else {
-      console.log("The answer is incorrect");
-    }
-    numCorrect;
-  // }
-}
+// function checkAnswer(e) {
+//   const chosenAnswer = e.target;
+//   const correct = chosenAnswer.dataset.correct;
+//   // for (currentAnswersArray of currentQuestionArray.answers) {
+//     // let currentAnswersArray = currentQuestionArray.answers;
+//     // let correct: true,ersArray[target].correct: true,umCorrect = 0;
+//     if (correct) {
+//       numCorrect++;
+//       //Add the total # correct to the correct div
+//       console.log(`numCorrect = ${numCorrect}`);
+//     } else {
+//       console.log("The answer is incorrect");
+//     }
+//     numCorrect;
+//   // }
+// }
 
 //this function grabs the next questions array, use it after the first question
 // let button = document.getElementsByClassName("answer")
