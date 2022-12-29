@@ -5,10 +5,12 @@ This is my second attempt to create my first milestone game.
 ###### - The week that the project was due my aunt passed away. I was responsible for her funeral and services. 
 
 ## About the game
-- I created the html file from scratch using Emmet Documentation.
+- The entire game was made from scratch.
+- I created the html file using Emmet Documentation.
 - The game uses the live-server node package to run locally in the browser.
 - I linked the css file in the head of the html file.
 - I linked the JavaScript file at the bottom of the html body.
+- Near the end of the game, I referenced one video by WebDevSimplified on YouTube because I needed help with setting the answer buttons with the correct dataset if the question or answer was correct. 
 ### JavaScript
 I used JavaScript to program the game. 
 - I created objects, arrays, arrays of object, functions, and more. 
@@ -30,10 +32,11 @@ I used JavaScript to program the game.
 - The next button increments the variable by one. 
 - The score and total score divs are populating the correct numbers.
 - The questions and answers array of objects is able to produce the correct text in the correct element.
-- The answer buttons are able to produce the correct  
+- The answer buttons are able to add a point for the correct answer, and not add a point if the answer is incorrect. 
+- The next question is able to be displayed correctly. 
+
 ### What is not so good
 - Currently, the question array is not complete because I am using placeholder text until I get it working.
-- I currently do not have a final page that displays how well the person did at the end or allows them to "start over". 
 - All of the code was done in one file "questions.js" because I was not able to get the questions.js file or the constant representing the q and a array to import to a different file. 
 
 ## To start the game
