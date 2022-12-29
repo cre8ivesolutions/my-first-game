@@ -1,6 +1,27 @@
 const qanda = [
   {
     id: 0,
+    question: "In CSS, what is a 'normal' font weight?",
+    answers: [
+      { answer: "100", correct: false },
+      { answer: "200", correct: false },
+      { answer: "400", correct: true },
+      { answer: "600", correct: false },
+    ],
+  },
+  {
+    id: 1,
+    question:
+      "Using CSS, how would you move text around one element on the left, but not under the element on the right?",
+    answers: [
+      { answer: "float: left;", correct: false },
+      { answer: "float: right;", correct: false },
+      { answer: "clear: left;", correct: true },
+      { answer: "float: right:", correct: false },
+    ],
+  },
+  {
+    id: 2,
     question: "What is the correct way to get a button to invoke a function?",
     answers: [
       {
@@ -21,27 +42,6 @@ const qanda = [
           "In the js file, use 'addEventListener' along with 2 or 3 arguments.",
         correct: true,
       },
-    ],
-  },
-  {
-    id: 1,
-    question:
-      "Using CSS, how would you move text around one element on the left, but not under the element on the right?",
-    answers: [
-      { answer: "float: left;", correct: false },
-      { answer: "float: right;", correct: false },
-      { answer: "clear: left;", correct: true },
-      { answer: "float: right:", correct: false },
-    ],
-  },
-  {
-    id: 2,
-    question: "In CSS, what is a 'normal' font weight?",
-    answers: [
-      { answer: "100", correct: false },
-      { answer: "200", correct: false },
-      { answer: "400", correct: true },
-      { answer: "600", correct: false },
     ],
   },
   {
