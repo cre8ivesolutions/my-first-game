@@ -46,6 +46,14 @@ img {
   font-weight: bold;
   color: #134f98;
 }
+.answer:hover {
+  background-color: #134f98c1;
+  color: white;
+  font-weight: bolder;
+  transform: scale(1.25);
+  outline: none;
+  border: none;
+} 
 .hide {
   display: none;
 }
@@ -98,14 +106,6 @@ img {
   text-align: center;
   transform: scale(1.25);
 }
-.answer:hover {
-  background-color: #134f98c1;
-  color: white;
-  font-weight: bolder;
-  transform: scale(1.25);
-  outline: none;
-  border: none;
-} 
 #scoreContainer {
   flex-direction: row;
   margin: 0;
@@ -143,20 +143,45 @@ img {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-.red-background {
+.answerIncorrect {
   background-color: red;
   color: white;
-  transform: scale(1.5);
+  /* transform: scale(1.5); */
 }
 .flash {
   animation-name: flash;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-.green-background {
+.answerCorrect {
   background-color: green;
   color: white;
-  transform: scale(1.5);
+  min-width: 70vw;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  font-weight: bold;
+}
+.answerIncorrect {
+  background-color: red;
+  color: white;
+  min-width: 70vw;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  font-weight: bold;
+}
+.answerIncorrect:hover{
+  color: white;
+  font-weight: bolder;
+  transform: scale(1.25);
+  outline: none;
+  border: none;
+}
+.answerCorrect:hover{
+  color: white;
+  font-weight: bolder;
+  transform: scale(1.25);
+  outline: none;
+  border: none;
 }
 @keyframes flash {
   from {background-color: currentColor;}

@@ -132,13 +132,15 @@ const startScreen = document.getElementById("startScreen");
 const quizContainer = document.getElementById("quizContainer");
 const questionContainer = document.getElementById("question")
 const backButton = document.getElementById("backButton");
+const answerContainer = document.getElementById("answers")
 const answerButtons = document.getElementById
 ("answers");
 const nextButton = document.getElementById("nextButton");
+const numCorrectContainer = document.getElementById("score");
 const footer = document.querySelector("footer");
 const totalNumQ = document.getElementById("totalScore");
 const totalNumberofQuestions = qanda.length;
-
+const buttonsContainer = document.getElementById("buttonsContainer")
 // //Display the total # of questions to the correct score div
 totalNumQ.innerHTML = totalNumberofQuestions;
 
@@ -153,7 +155,7 @@ function startGame() {
   displayQandA(i);
 }
 
-//populate q and a's
+//function to populate q and a's
 function displayQandA(b) {
   let currentQuestionArray = qanda[b];
   const currentQuestion = currentQuestionArray.question;
@@ -174,14 +176,32 @@ function displayQandA(b) {
       answerButton.dataset.correct = oneAnswer.correct
     }
     document.getElementById('answers').appendChild(answerButton)
-    answerButton.addEventListener("click", clickAnswer)
+    answerButton.addEventListener("click", checkAnswer)
   })
 }
 
-const numCorrectContainer = document.getElementById("score");
+
+// function setNextQuestion(){
+  //   // checkAnswer();
+  //   // clearOldAnswers();
+  //   // checkAnswer()
+  // //  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
+  // }
+  
+  function clearOldAnswers(){
+    nextButton.classList.remove("hide")
+    while (answerButtons.firstChild){
+      answerButtons.removeChild(answerButtons.firstChild)
+    }
+    while (questionContainer.firstChild){
+      question.removeChild(questionContainer.firstChild)
+    }
+  }
+  
 let numCorrect = 0;
+  
 function clickAnswer(){
-  // {once=true}//need a way to only let it click one time
+  // {once=true}//need a way to only let it click only one time
   nextButton.classList.remove("hide")
   numCorrect++ //remove this once the checkAnswer function is working
   //display current score
@@ -189,35 +209,52 @@ function clickAnswer(){
   console.log(`numCorrect=${numCorrect}`)
 }
 
-// function setNextQuestion(){
-//   // checkAnswer();
-//   // clearOldAnswers();
-//   // checkAnswer()
-// //  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
-// }
-
-function clearOldAnswers(){
-  nextButton.classList.remove("hide")
-  while (answerButtons.firstChild){
-    answerButtons.removeChild(answerButtons.firstChild)
-  }
-  while (questionContainer.firstChild){
-    question.removeChild(questionContainer.firstChild)
-  }
-}
-
 function checkAnswer(e) { //this is not working yet
-  const chosenAnswer = e;
+  const chosenAnswer = e.target;
   const correct = chosenAnswer.dataset.correct;
-  if (correct) {
-    numCorrect++;
+  // const incorrect = document.body.dataset.undefined;
+  console.log(`checkAnswer() correct = ${chosenAnswer.dataset.correct}`)
+  setCorrectClass(document.body, correct)
+  Array.from(answerButtons.children).forEach(aButton => {
+    setCorrectClass(aButton, aButton.dataset.correct)
+    chosenAnswer.classList.remove("answer")
+    if (correct){
+      chosenAnswer.classList.add("answerCorrect")
+      numCorrect++
+      // incorrect.classList.add("red-background")
+    } else{
+      // chosenAnswer.classList.remove("answer")
+      chosenAnswer.classList.add("answerIncorrect")
+      console.log("incorrect answer was chosen")
+    }  
+  })
+  nextButton.classList.remove("hide")
+
+  // numCorrect++ //remove this once the checkAnswer function is working
+  //display current score
+  // numCorrectContainer.innerHTML = numCorrect;
+
+
+  // if (qanda.length > d + 1 ) {
+    // numCorrect++;
     //Add the total # correct to the correct div
-    console.log(`numCorrect = ${numCorrect}`);
+    // } else {
+    console.log(`numCorrect from checkAnswer = ${numCorrect}`);
+  // }
+  // console.log("The answer is incorrect");
+}
+function setCorrectClass(element, correct){ //this is used for the answerButton when it is clicked to set the class 
+  clearCorrectClass(element)
+  if (correct){
+    element.classList.add('correct')
   } else {
-    console.log("The answer is incorrect");
+    element.classList.add('incorrect')
   }
 }
-
+function clearCorrectClass(element){
+  element.classList.remove('correct')
+  element.classList.remove('incorrect')
+}
 //the below code is used to iterate over the answers
 function incrementValue() {
   i++;
@@ -232,17 +269,30 @@ nextButton.addEventListener("click", nextButtonFunction);
 let d = 0;
 function nextButtonFunction() {
   clearOldAnswers()
-  if (d < qanda.length) {
-      d++;
-      displayQandA(d)
-      console.log(`nextQuestionButton d= ${d}`);
-    } else if (d + 1 === "undefined") {
-    console.log(`the next page is the final page`);
+  clearCorrectClass(answerButtons)
+  if (d===(qanda.length-1)) {
+    displayFinalPage()
+    console.log(`this is the final page`);
+  } else {
+    d++;
+    displayQandA(d)
+    console.log(`nextQuestionButton d= ${d}`);
   }
   console.log(`the return value of d from nextButton= ${d}`);
   return d;
 }
+console.log(`qanda.length=${qanda.length}`)
 
+function displayFinalPage(){
+  nextButton.classList.add("hide")
+  questionContainer.classList.add("hide")
+  let playAgainButton = document.createElement("button")
+  playAgainButton.innerHTML = "Play Again!"
+  document.getElementById('buttonContainer').appendChild(playAgainButton)
+  playAgainButton.addEventListener("click", startGame)
+
+  console.log('This is the final Page')
+}
 //the below code isnt working. it is supposed to make it so that the i++ only happens once
 // setTimeout(() => {
 //   parent.removeEventListener("click", checkAnswer)
