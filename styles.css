@@ -5,16 +5,12 @@ body {
   background-image: url("/public/gradient-back.jpg");
   background-repeat:no-repeat;
   background-attachment: fixed;
-  background-position: left;
-  /* background-image: repeating-radial-gradient(white, #134f9835 ); */
-  /* background-image: linear-gradient(white, #134f9835 ); */
-  /* display: flexbox; */
-  margin: .25em;
+  background-position: left bottom;
   margin-top: .5em;
-  padding: .25em;
+  padding: .5em;
   text-align: center;
   color: #134f98;
-  /* max-height: fit-content; */
+  max-height: fit-content;
 }
 button {
   border-radius: .75em;
@@ -26,15 +22,11 @@ button {
   flex-wrap: wrap;
 }
 div {
-  margin: .2em;
+  margin: .25em;
   padding: .25em;
 }
-footer {
-  color: rgba(0, 0, 0, 0.698);
-}
 h1 {
-  /* text-shadow: 2px 2px 5px  white; */
-  font-size: 3em;
+  font-size: 2.75em;
 }
 h1, h2, h3, h4{
   margin: .75em;
@@ -105,6 +97,7 @@ img {
   justify-content: flex-end;
   border: none;
   color: white;
+  font-weight: bold;
   max-height: 5vh;
 
   animation-name: attention-button;

@@ -121,15 +121,13 @@ const qanda = [
     answers: [
       { answer: "yes = correct", correct: true },
       { answer: "no", correct: false },
-      // { answer: "a10", correct: false },
-      // { answer: "a10", correct: false },
     ],
   },
 ];
 
 //global variables
 const answer = document.getElementById("answer");
-const answerButtons = document.getElementById("answers"); //look into this duplicate id
+const answerButtons = document.getElementById("answers"); 
 const answerContainer = document.getElementById("answerContainer");
 const backButton = document.getElementById("backButton");
 const buttonsContainer = document.getElementById("buttonsContainer");
@@ -203,7 +201,6 @@ function checkAnswer(e) {
       chosenAnswer.classList.add("answerCorrect");
     } else {
       chosenAnswer.classList.add("answerIncorrect");
-      console.log("incorrect answer was chosen");
     }
   });
   numCorrectContainer.innerHTML = numCorrect;
@@ -247,25 +244,23 @@ function nextButtonFunction() {
     d++;
     displayQandA(d);
   }
-  console.log(`the return value of d from nextButtonFunction= ${d}`);
   return d;
 }
-console.log(`qanda.length=${qanda.length}`);
 
 function displayFinalPage() {
-  nextButton.classList.add("hide");
   questionContainer.classList.add("hide");
   h3Answers.classList.add("hide");
   scoreContainer.classList.add("hide");
+  nextButton.classList.add("hide");
 
   //Create a message for the final page
   let finalPageMessage = document.createElement("h2");
   finalPageMessage.innerText =
-    "How did you do? You've reached the end of the quiz!";
+    "You've reached the end of the quizzle. \n How did you do?";
   document.getElementById("answerContainer").appendChild(finalPageMessage);
   //create a button to play again
   let playAgainButton = document.createElement("button");
-  playAgainButton.innerHTML = "PLAY AGAIN!";
+  playAgainButton.innerHTML = "PLAY AGAIN?";
   playAgainButton.classList.add("greenButton");
   document.getElementById("buttonContainer").appendChild(playAgainButton);
   playAgainButton.addEventListener("click", playAgain);
@@ -279,7 +274,7 @@ function displayFinalPage() {
 
     let startAgainMessage = document.createElement("h2");
     let startAgainText =
-      "404 error. I apologize, this button is not working right now.";
+      "404 error. \n This button is not working right now. \n Click the refresh button on your browser to start over.";
     startAgainMessage.innerText = startAgainText;
     document.getElementById("questionContainer").appendChild(startAgainMessage);
   }
