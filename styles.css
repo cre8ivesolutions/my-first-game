@@ -54,8 +54,61 @@ img {
   outline: none;
   border: none;
 } 
+.answerCorrect {
+  background-color: green;
+  color: white;
+  min-width: 70vw;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  font-weight: bold;
+  /* transform: scale(1.25); */
+}
+.answerIncorrect {
+  background-color: red;
+  /* transform: scale(.75); */
+  color: white;
+  min-width: 70vw;
+  flex-wrap: wrap;
+  max-width: 70vw;
+  font-weight: bold;
+}
+.answerIncorrect:hover{
+  color: white;
+  font-weight: bolder;
+  outline: none;
+  border: none;
+}
+.answerCorrect:hover{
+  color: white;
+  font-weight: bolder;
+  outline: none;
+  border: none;
+}
+.flash {
+  animation-name: flash;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
 .hide {
   display: none;
+}
+.greenButton {
+  justify-content: flex-end;
+  border: none;
+  color: white;
+  max-height: 5vh;
+
+  animation-name: attention-button;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.greenButton :hover {
+  /* background-color: green; */
+  color: white;
+  border: none;
+  text-align: center;
+  font-weight: bolder;
+  transform: scale(1.25);
 }
 .show {
   display: contents;
@@ -95,7 +148,7 @@ img {
   justify-content: flex-end;
   border: none;
   color: white;
-  animation-name: next-button;
+  animation-name: attention-button;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
@@ -143,53 +196,14 @@ img {
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-.answerIncorrect {
-  background-color: red;
-  color: white;
-  /* transform: scale(1.5); */
-}
-.flash {
-  animation-name: flash;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-.answerCorrect {
-  background-color: green;
-  color: white;
-  min-width: 70vw;
-  flex-wrap: wrap;
-  max-width: 70vw;
-  font-weight: bold;
-}
-.answerIncorrect {
-  background-color: red;
-  color: white;
-  min-width: 70vw;
-  flex-wrap: wrap;
-  max-width: 70vw;
-  font-weight: bold;
-}
-.answerIncorrect:hover{
-  color: white;
-  font-weight: bolder;
-  transform: scale(1.25);
-  outline: none;
-  border: none;
-}
-.answerCorrect:hover{
-  color: white;
-  font-weight: bolder;
-  transform: scale(1.25);
-  outline: none;
-  border: none;
-}
+
 @keyframes flash {
   from {background-color: currentColor;}
   to {background-color: transparent;}
 }
-@keyframes next-button {
+@keyframes attention-button {
   from {background-color: green;}
-  to {background-color: rgb(111, 171, 21);}
+  to {background-color: rgb(135, 202, 33);}
 }
 @keyframes quizImg {
   0% { width: 10px}

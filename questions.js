@@ -5,101 +5,103 @@ const qanda = [
     answers: [
       {
         answer: "In html file, add 'onClick = 'function()'",
-        correct: true 
+        correct: false,
       },
       {
-        answer: "In js file, add 'onclick=function()'",
-        correct: false
-      },
-      {
-        answer:
-          "The only way to do it is in a function that calls to the button",
-        correct: false
+        answer: "In js file, add 'onClick=function()'",
+        correct: false,
       },
       {
         answer:
-          "In js file, use 'addEventListener' along with 2 or 3 arguments",
-        correct: false
+          "The only way to do it is in a function that calls to the button.",
+        correct: false,
+      },
+      {
+        answer:
+          "In the js file, use 'addEventListener' along with 2 or 3 arguments.",
+        correct: true,
       },
     ],
   },
   {
     id: 1,
     question:
-      "CSS: How do you move text under one element on the left, but not under the element on the right?",
+      "Using CSS, how would you move text around one element on the left, but not under the element on the right?",
     answers: [
-      { answer: "float: left;", correct: false},
-      { answer: "float: right;", correct: false},
-      { answer: "clear: left;", correct: true},
-      { answer: "float: right:", correct: false}
+      { answer: "float: left;", correct: false },
+      { answer: "float: right;", correct: false },
+      { answer: "clear: left;", correct: true },
+      { answer: "float: right:", correct: false },
     ],
   },
   {
     id: 2,
-    question: "CSS: What is a 'normal' font weight?",
+    question: "In CSS, what is a 'normal' font weight?",
     answers: [
-      {answer: "100", correct: false},
-      {answer: "200", correct: false},
-      {answer: "400", correct: true},
-      {answer: "600", correct: false}
+      { answer: "100", correct: false },
+      { answer: "200", correct: false },
+      { answer: "400", correct: true },
+      { answer: "600", correct: false },
     ],
   },
   {
     id: 3,
-    question: "How does html know how to use the javascript file?",
+    question: "When running your code in the browser, how does the html file know which js file to use?",
     answers: [
-      {answer: "It wil automatically use the index.js file.",
-        correct: false
+      { answer: "It wil automatically use the server.js file.", correct: false },
+      {
+        answer: "You need to tell it what to use in the package.json files.",
+        correct: false,
       },
-      {answer: "You need to tell it what to use in the package.json files.",
-        correct: false
-      },
-      {answer:
+      {
+        answer:
           "You need to tell it what to use in the head of the html file using the script tag.",
-        correct: true},
-      {answer: "You need to tell it what to usse in the javascript file.",
-        correct: false
+        correct: true,
+      },
+      {
+        answer: "You need to tell it what to use in the JavaScript file.",
+        correct: false,
       },
     ],
   },
   {
     id: 4,
-    question: "CSS: What is a 'normal' font weight?",
+    question: "Q5",
     answers: [
-      {answer: "100", correct: false},
-      {answer: "200", correct: false},
-      {answer: "400", correct: true},
-      {answer: "600", correct: false}
+      { answer: "A5=correct", correct: true },
+      { answer: "A5", correct: false },
+      { answer: "A5", correct: false },
+      { answer: "A5", correct: false },
     ],
   },
   {
     id: 5,
     question: "Q6",
     answers: [
-      { answer: "A6", correct: false},
-      { answer: "A6 = correct", correct: true},
-      { answer: "A6", correct: false},
-      { answer: "A6", correct: false}
+      { answer: "A6", correct: false },
+      { answer: "A6 = correct", correct: true },
+      { answer: "A6", correct: false },
+      { answer: "A6", correct: false },
     ],
   },
   {
     id: 6,
     question: "Q7",
     answers: [
-      { answer: "A7", correct: false},
-      { answer: "A7", correct: false},
-      { answer: "A7", correct: false},
-      { answer: "A7 = correct", correct: true}
+      { answer: "A7", correct: false },
+      { answer: "A7", correct: false },
+      { answer: "A7", correct: false },
+      { answer: "A7 = correct", correct: true },
     ],
   },
   {
     id: 7,
     question: "Q8",
     answers: [
-      { answer: "A8 = correct", correct: true},
-      { answer: "A8", correct: false},
-      { answer: "A8", correct: false},
-      { answer: "A8", correct: false}
+      { answer: "A8 = correct", correct: true },
+      { answer: "A8", correct: false },
+      { answer: "A8", correct: false },
+      { answer: "A8", correct: false },
     ],
   },
   {
@@ -107,160 +109,129 @@ const qanda = [
     question: "CSS: What is a 'normal' font weight?",
     question: "Q9",
     answers: [
-      { answer: "A9", correct: false},
-      { answer: "A9", correct: false},
-      { answer: "A9 = correct", correct: true},
-      { answer: "A9", correct: false}
+      { answer: "A9", correct: false },
+      { answer: "A9 = correct", correct: true },
+      { answer: "A9", correct: false },
+      { answer: "A9", correct: false },
     ],
   },
   {
     id: 9,
-    question: "CSS: What is a 'normal' font weight?",
-    question: "Last question",
+    question: "Is this the last question?",
     answers: [
-      { answer: "last a", correct: false},
-      { answer: "a10", correct: false},
-      { answer: "a10 = correct", correct: true},
-      { answer: "a10", correct: false}
+      { answer: "yes = correct", correct: true },
+      { answer: "no", correct: false },
+      // { answer: "a10", correct: false },
+      // { answer: "a10", correct: false },
     ],
   },
 ];
 
 //global variables
-const startButton = document.getElementById("startButton");
-const startScreen = document.getElementById("startScreen");
-const quizContainer = document.getElementById("quizContainer");
-const questionContainer = document.getElementById("question")
+const answer = document.getElementById("answer");
+const answerButtons = document.getElementById("answers"); //look into this duplicate id
+const answerContainer = document.getElementById("answerContainer");
 const backButton = document.getElementById("backButton");
-const answerContainer = document.getElementById("answers")
-const answerButtons = document.getElementById
-("answers");
+const buttonsContainer = document.getElementById("buttonsContainer");
+const footer = document.querySelector("footer");
+const h3Answers = document.getElementById("h3Answers");
 const nextButton = document.getElementById("nextButton");
 const numCorrectContainer = document.getElementById("score");
-const footer = document.querySelector("footer");
-const totalNumQ = document.getElementById("totalScore");
+const question = document.getElementById("question");
+const questionContainer = document.getElementById("questionContainer");
+const quizContainer = document.getElementById("quizContainer");
+const scoreContainer = document.getElementById("scoreContainer");
+const startButton = document.getElementById("startButton");
+const startScreen = document.getElementById("startScreen");
 const totalNumberofQuestions = qanda.length;
-const buttonsContainer = document.getElementById("buttonsContainer")
-// //Display the total # of questions to the correct score div
+const totalNumQ = document.getElementById("totalScore");
+
+//Display the total # of points possible to the correct score div
 totalNumQ.innerHTML = totalNumberofQuestions;
 
-// //start the game and populate the questions with the start button
+//start the game and populate the questions with the start button
 startButton.addEventListener("click", startGame);
-let i =0;
+
+let i = 0;
 function startGame() {
   quizContainer.classList.remove("hide");
   startScreen.classList.add("hide");
   footer.classList.remove("hide");
-  clearOldAnswers()
   displayQandA(i);
 }
 
-//function to populate q and a's
+//populate q and a's
 function displayQandA(b) {
+  nextButton.classList.add("hide");
+
   let currentQuestionArray = qanda[b];
   const currentQuestion = currentQuestionArray.question;
   const currentAnswersArray = currentQuestionArray.answers;
-  nextButton.classList.add("hide")
+
   // populate questions
   const questionElement = document.createElement("h3");
   const questionText = currentQuestion;
   document.getElementById("question").appendChild(questionElement);
   questionElement.innerHTML = questionText;
+
   //populate answers
-  currentAnswersArray.forEach(oneAnswer=>{
-    const answerButton = document.createElement('button')
-    answerButton.classList.add('answer')
+  currentAnswersArray.forEach((oneAnswer) => {
+    const answerButton = document.createElement("button");
+    answerButton.classList.add("answer");
     answerButton.innerText = oneAnswer.answer;
-    // console.log(`oneAnswer.correct = ${oneAnswer.correct}`)
-    if (oneAnswer.correct){
-      answerButton.dataset.correct = oneAnswer.correct
+    if (oneAnswer.correct) {
+      answerButton.dataset.correct = oneAnswer.correct;
     }
-    document.getElementById('answers').appendChild(answerButton)
-    answerButton.addEventListener("click", checkAnswer)
-  })
+    document.getElementById("answers").appendChild(answerButton);
+    answerButton.addEventListener("click", checkAnswer);
+  });
 }
 
-
-// function setNextQuestion(){
-  //   // checkAnswer();
-  //   // clearOldAnswers();
-  //   // checkAnswer()
-  // //  console.log(`after setNextQuestion, numCorrect = ${numCorrect}`)
-  // }
-  
-  function clearOldAnswers(){
-    nextButton.classList.remove("hide")
-    while (answerButtons.firstChild){
-      answerButtons.removeChild(answerButtons.firstChild)
-    }
-    while (questionContainer.firstChild){
-      question.removeChild(questionContainer.firstChild)
-    }
-  }
-  
 let numCorrect = 0;
-  
-function clickAnswer(){
-  // {once=true}//need a way to only let it click only one time
-  nextButton.classList.remove("hide")
-  numCorrect++ //remove this once the checkAnswer function is working
-  //display current score
-  numCorrectContainer.innerHTML = numCorrect;
-  console.log(`numCorrect=${numCorrect}`)
-}
-
-function checkAnswer(e) { //this is not working yet
+function checkAnswer(e) {
+  nextButton.classList.remove("hide");
   const chosenAnswer = e.target;
   const correct = chosenAnswer.dataset.correct;
-  // const incorrect = document.body.dataset.undefined;
-  console.log(`checkAnswer() correct = ${chosenAnswer.dataset.correct}`)
-  setCorrectClass(document.body, correct)
-  Array.from(answerButtons.children).forEach(aButton => {
-    setCorrectClass(aButton, aButton.dataset.correct)
-    chosenAnswer.classList.remove("answer")
-    if (correct){
-      chosenAnswer.classList.add("answerCorrect")
-      numCorrect++
-      // incorrect.classList.add("red-background")
-    } else{
-      // chosenAnswer.classList.remove("answer")
-      chosenAnswer.classList.add("answerIncorrect")
-      console.log("incorrect answer was chosen")
-    }  
-  })
-  nextButton.classList.remove("hide")
-
-  // numCorrect++ //remove this once the checkAnswer function is working
-  //display current score
-  // numCorrectContainer.innerHTML = numCorrect;
-
-
-  // if (qanda.length > d + 1 ) {
-    // numCorrect++;
-    //Add the total # correct to the correct div
-    // } else {
-    console.log(`numCorrect from checkAnswer = ${numCorrect}`);
-  // }
-  // console.log("The answer is incorrect");
+  if (correct) {
+    numCorrect++;
+  }
+  setCorrectClass(document.body, correct);
+  Array.from(answerButtons.children).forEach((aButton) => {
+    setCorrectClass(aButton, aButton.dataset.correct);
+    chosenAnswer.classList.remove("answer");
+    if (correct) {
+      chosenAnswer.classList.add("answerCorrect");
+    } else {
+      chosenAnswer.classList.add("answerIncorrect");
+      console.log("incorrect answer was chosen");
+    }
+  });
+  numCorrectContainer.innerHTML = numCorrect;
 }
-function setCorrectClass(element, correct){ //this is used for the answerButton when it is clicked to set the class 
-  clearCorrectClass(element)
-  if (correct){
-    element.classList.add('correct')
+
+function setCorrectClass(element, correct) {
+  //this is used for the answerButton when it is clicked to set the class
+  clearCorrectClass(element);
+  if (correct) {
+    element.classList.add("correct");
   } else {
-    element.classList.add('incorrect')
+    element.classList.add("incorrect");
   }
 }
-function clearCorrectClass(element){
-  element.classList.remove('correct')
-  element.classList.remove('incorrect')
+
+function clearCorrectClass(element) {
+  element.classList.remove("correct");
+  element.classList.remove("incorrect");
 }
-//the below code is used to iterate over the answers
-function incrementValue() {
-  i++;
-  // setNextQuestion(i);
-  console.log(`after incrementValue i = ${i}`);
-  return i
+
+function clearOldAnswers() {
+  nextButton.classList.remove("hide");
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+  while (question.firstChild) {
+    question.removeChild(question.firstChild);
+  }
 }
 
 //next button
@@ -268,31 +239,52 @@ nextButton.addEventListener("click", nextButtonFunction);
 
 let d = 0;
 function nextButtonFunction() {
-  clearOldAnswers()
-  clearCorrectClass(answerButtons)
-  if (d===(qanda.length-1)) {
-    displayFinalPage()
-    console.log(`this is the final page`);
+  clearOldAnswers();
+  clearCorrectClass(answerButtons);
+  if (d === qanda.length - 1) {
+    displayFinalPage();
   } else {
     d++;
-    displayQandA(d)
-    console.log(`nextQuestionButton d= ${d}`);
+    displayQandA(d);
   }
-  console.log(`the return value of d from nextButton= ${d}`);
+  console.log(`the return value of d from nextButtonFunction= ${d}`);
   return d;
 }
-console.log(`qanda.length=${qanda.length}`)
+console.log(`qanda.length=${qanda.length}`);
 
-function displayFinalPage(){
-  nextButton.classList.add("hide")
-  questionContainer.classList.add("hide")
-  let playAgainButton = document.createElement("button")
-  playAgainButton.innerHTML = "Play Again!"
-  document.getElementById('buttonContainer').appendChild(playAgainButton)
-  playAgainButton.addEventListener("click", startGame)
+function displayFinalPage() {
+  nextButton.classList.add("hide");
+  questionContainer.classList.add("hide");
+  h3Answers.classList.add("hide");
+  scoreContainer.classList.add("hide");
 
-  console.log('This is the final Page')
+  //Create a message for the final page
+  let finalPageMessage = document.createElement("h2");
+  finalPageMessage.innerText =
+    "How did you do? You've reached the end of the quiz!";
+  document.getElementById("answerContainer").appendChild(finalPageMessage);
+  //create a button to play again
+  let playAgainButton = document.createElement("button");
+  playAgainButton.innerHTML = "PLAY AGAIN!";
+  playAgainButton.classList.add("greenButton");
+  document.getElementById("buttonContainer").appendChild(playAgainButton);
+  playAgainButton.addEventListener("click", playAgain);
+  function playAgain() {
+    scoreContainer.classList.add("hide");
+    playAgainButton.classList.add("hide");
+    finalPageMessage.classList.add("hide");
+    answerContainer.classList.add("hide");
+
+    questionContainer.classList.remove("hide");
+
+    let startAgainMessage = document.createElement("h2");
+    let startAgainText =
+      "404 error. I apologize, this button is not working right now.";
+    startAgainMessage.innerText = startAgainText;
+    document.getElementById("questionContainer").appendChild(startAgainMessage);
+  }
 }
+
 //the below code isnt working. it is supposed to make it so that the i++ only happens once
 // setTimeout(() => {
 //   parent.removeEventListener("click", checkAnswer)

@@ -18,10 +18,8 @@
           width="350px"
         />
       </header>
-      <!-- <div id="startBtnSection"> -->
       <br />
       <button id="startButton">CLICK TO START</button>
-      <!-- </div> -->
     </div>
     <main id="quizContainer" class="hide">
       <div id="questionContainer">
@@ -30,14 +28,9 @@
       </div>
       <hr />
       <div id="answerContainer">
-        <h3>ANSWERS</h3>
-        <div id="answers">
-          <button id="a0" class="answer"></button>
-          <button id="a1" class="answer"></button>
-          <button id="a2" class="answer"></button>
-          <button id="a3" class="answer"></button>
-        </div>
-        <br/>
+        <h3 id="h3Answers">ANSWERS</h3>
+        <div id="answers"></div>
+        <br />
       </div>
       <div id="scoreContainer">
         <h4>YOUR SCORE:</h4>
@@ -50,12 +43,16 @@
         </div>
       </div>
       <div id="buttonContainer">
-        <button id="backButton" class="hide" onClick="history.back()">back</button>
-        <!-- <button id="submitButton">Submit Answer</button> -->
-        <button id="nextButton"><b>NEXT</b></button>
+        <button id="nextButton" class="greenButton"><b>NEXT</b></button>
       </div>
     </main>
-    <footer class="hide"><p><a href="https://github.com/cre8ivesolutions/my-first-game">Check out this game on GitHub!</a></p></footer>
+    <footer class="hide">
+      <p>
+        <a href="https://github.com/cre8ivesolutions/my-first-game"
+          >Check out this game on GitHub!</a
+        >
+      </p>
+    </footer>
     <!-- <script src="./main.js"></script> -->
     <script src="./questions.js"></script>
   </body>
