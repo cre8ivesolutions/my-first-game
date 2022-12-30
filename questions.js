@@ -179,13 +179,22 @@ function displayQandA(b) {
     answerButton.innerText = oneAnswer.answer;
     if (oneAnswer.correct) {
       answerButton.dataset.correct = oneAnswer.correct;
+    } else {
+      answerButton.dataset.incorrect = oneAnswer.correct
     }
     document.getElementById("answers").appendChild(answerButton);
-    answerButton.addEventListener("click", checkAnswer);
+    
+    answerButton.addEventListener("click",checkAnswer)
   });
 }
 
-let numCorrect = 0;
+// function timedCheckAnswer(){
+//   setTimeout(()=>{
+//     checkAnswer()
+//   }, 1000)
+// }  
+
+  let numCorrect = 0;
 function checkAnswer(e) {
   nextButton.classList.remove("hide");
   const chosenAnswer = e.target;
@@ -193,19 +202,22 @@ function checkAnswer(e) {
   if (correct) {
     numCorrect++;
   }
+
+
   setCorrectClass(document.body, correct);
   Array.from(answerButtons.children).forEach((aButton) => {
     setCorrectClass(aButton, aButton.dataset.correct);
     chosenAnswer.classList.remove("answer");
     if (correct) {
       chosenAnswer.classList.add("answerCorrect");
-    } else {
-      chosenAnswer.classList.add("answerIncorrect");
-    }
-  });
-  numCorrectContainer.innerHTML = numCorrect;
-}
 
+      } else {
+        chosenAnswer.classList.add("answerIncorrect");
+      }
+    });
+    numCorrectContainer.innerHTML = numCorrect;
+  }
+  
 function setCorrectClass(element, correct) {
   //this is used for the answerButton when it is clicked to set the class
   clearCorrectClass(element);
@@ -277,9 +289,8 @@ function displayFinalPage() {
     "404 error. \n This button is not working right now. \n Click the refresh button... \n Just kidding... ";
     startAgainMessage.innerText = startAgainText;
     document.getElementById("questionContainer").appendChild(startAgainMessage);
-    
+    setTimeout(()=> {location.reload()}, 3500)
   }
-  setTimeout(()=> {location.reload()}, 5000)
 }
 
 

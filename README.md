@@ -7,14 +7,14 @@ This is my second attempt to create my first milestone game.
 ## About the game
 - The entire game was made from scratch.
 - I created the html file using Emmet Documentation.
-- The game uses the live-server node package to run locally in the browser.
+- The game uses the live-server node package module (npm) to run locally in the browser.
 - I linked the css file in the head of the html file.
 - I linked the JavaScript file at the bottom of the html body.
-- Near the end of the game, I referenced one video by WebDevSimplified on YouTube because I needed help with setting the answer buttons with the correct dataset if the question or answer was correct. 
+- Near the end of the game, I needed help so I had help from one video by WebDevSimplified on YouTube. The video helped me with setting the answer buttons with the correct dataset if the chosen answer was correct. The vido can be found here: https://youtu.be/riDzcEQbX6k 
 ### JavaScript
 I used JavaScript to program the game. 
-- I created objects, arrays, arrays of object, functions, and more. 
-- I also handled browser events, controlled flow, implemented loops and iteration, called functions, utilized arguments and parameters, and more. 
+- I created objects, arrays, arrays of object, new arrays from an object in an array, and more. 
+- I also handled browser events, controlled flow, implemented loops and iteration, called functions, utilized arguments and parameters, set timeout, and more. 
 - I also used at least one arrow function, used the forEach function, used the Increment Operator, used at least one promise, and more.
 - I also accessed and updated the DOM to create elements and to add and remove classes.
 ### UX/UI
@@ -22,7 +22,7 @@ I used JavaScript to program the game.
 - The css file is set up alphabetically and the more specific class and id styles are at the bottom. 
 - I used the modern font-family 'system-ui' because it is a familiar font that is used on numerous Apple products.
 - I used one or two inline styles in the html file do demonstrate that I know how to use it.
-- I used css @keyframes to create animations to create interest on the landing page, the loading of the question, and to make the answer and next buttons responsive when hovering. 
+- I used css @keyframes to create animations to create interest, the loading of the question, and to make the answer and next buttons responsive when hovering. 
 
 ### What's good
 - The biggest challenge was making the code DRY, and I believe I was able to achieve this. 
@@ -36,7 +36,7 @@ I used JavaScript to program the game.
 - The next question is able to be displayed correctly. 
 
 ### What is not so good
-- Currently, the question array is not complete because I am using placeholder text until I get it working.
+- If you click the correct answer more than one time, you will continue to get points added to your score for each click with no limit. I would like to continue to work on this usind setTimeout.
 - All of the code was done in one file "questions.js" because I was not able to get the questions.js file or the constant representing the q and a array to import to a different file. 
 
 ## To start the game

@@ -131,7 +131,7 @@ img {
 #quizTime {
   margin-top: 1em;
   /* filter: saturate(.4); */
-  transform: scale(1, 1) rotate(360deg);
+  transform: scale(1, 1) rotate(720deg);
   animation-name: quizImg;
   animation-duration: 1s;
   animation-iteration-count: 1;
