@@ -22,31 +22,31 @@ const qanda = [
   },
   {
     id: 2,
-    question: "What is the correct way to get a button to invoke a function?",
+    question: "What is the correct syntax to get a button to invoke a function when it is clicked?",
     answers: [
       {
-        answer: "In html file, add 'onClick = 'function()'",
+        answer: `Using HTML: \n 'addEventListener."click" = function()'`,
         correct: false,
       },
       {
-        answer: "In js file, add 'onClick=function()'",
-        correct: false,
-      },
-      {
-        answer:
-          "The only way to do it is in a function that calls to the button.",
+        answer: "Using JavaScript: \n 'button.onClick=function()'",
         correct: false,
       },
       {
         answer:
-          "In the js file, use 'addEventListener' along with 2 or 3 arguments.",
+          "The only way to do it is using a JavaScript function that calls to the button",
+        correct: false,
+      },
+      {
+        answer:
+          `Using JavaScript: \n 'button.addEventListener('click', function)'`,
         correct: true,
       },
     ],
   },
   {
     id: 3,
-    question: "When running your code in the browser, how does the html file know which js file to use?",
+    question: "How does the html file know which JavaScript file to use?",
     answers: [
       { answer: "It wil automatically use the server.js file.", correct: false },
       {
@@ -59,68 +59,68 @@ const qanda = [
         correct: true,
       },
       {
-        answer: "You need to tell it what to use in the JavaScript file.",
+        answer: "You need to tell the html which file to use in the JavaScript file.",
         correct: false,
       },
     ],
   },
   {
     id: 4,
-    question: "Q5",
+    question: "'Defining' and 'invoking' a function mean the same thing.",
     answers: [
-      { answer: "A5=correct", correct: true },
-      { answer: "A5", correct: false },
-      { answer: "A5", correct: false },
-      { answer: "A5", correct: false },
+      { answer: "True", correct: false },
+      { answer: "False", correct: true },
     ],
   },
   {
     id: 5,
-    question: "Q6",
+    question: "Which of the below concepts hides unwanted details but still shows the most important information? ",
     answers: [
-      { answer: "A6", correct: false },
-      { answer: "A6 = correct", correct: true },
-      { answer: "A6", correct: false },
-      { answer: "A6", correct: false },
+      { answer: "Polymorphism", correct: false },
+      { answer: "Abstraction", correct: true },
+      { answer: "Inheritance", correct: false },
+      { answer: "Encapsulation", correct: false },
     ],
   },
   {
     id: 6,
-    question: "Q7",
+    question: "Which of these statements utilizes a 'default' block of code?",
     answers: [
-      { answer: "A7", correct: false },
-      { answer: "A7", correct: false },
-      { answer: "A7", correct: false },
-      { answer: "A7 = correct", correct: true },
+      { answer: "If / Else Statement", correct: false },
+      { answer: "Else / If Statement", correct: false },
+      { answer: "Switch Statement", correct: true },
+      { answer: "All of them", correct: false },
+      { answer: "None of them", correct: false },
     ],
   },
   {
     id: 7,
-    question: "Q8",
+    question: "Which of these is the correct usage of a Ternary Operator?",
     answers: [
-      { answer: "A8 = correct", correct: true },
-      { answer: "A8", correct: false },
-      { answer: "A8", correct: false },
-      { answer: "A8", correct: false },
+      { answer: "authenticated ? renderLogin() : renderApp()", correct: true },
+      { answer: "renderApp() ? renderLogin() ; authenticated :", correct: false },
+      { answer: "renderLogin() ? renderApp(): authenticated", correct: false },
+      { answer: "authenticated: renderApp() ? renderLogin()", correct: false },
     ],
   },
   {
     id: 8,
-    question: "CSS: What is a 'normal' font weight?",
-    question: "Q9",
+    question: "Which of these definitions of the different kinds of loops is NOT correct?",
     answers: [
-      { answer: "A9", correct: false },
-      { answer: "A9 = correct", correct: true },
-      { answer: "A9", correct: false },
-      { answer: "A9", correct: false },
+      { answer: "'for' = loops through a block of code a number of times", correct: false },
+      { answer: "'for/in' = loops through the properties of an object", correct: false },
+      { answer: "'for/of' = loops through the values of an iterable object", correct: false },
+      { answer: "'while' = loops through a block of code while the json is taking a nap", correct: true },
     ],
   },
   {
     id: 9,
-    question: "Is this the last question?",
+    question: "Do you love JavaScript? ",
     answers: [
-      { answer: "yes = correct", correct: true },
-      { answer: "no", correct: false },
+      { answer: "Yes!!!", correct: true },
+      { answer: "Kinda", correct: true },
+      { answer: "I'm not sure", correct: true },
+      { answer: "No way!", correct: false },
     ],
   },
 ];
@@ -269,20 +269,24 @@ function displayFinalPage() {
     playAgainButton.classList.add("hide");
     finalPageMessage.classList.add("hide");
     answerContainer.classList.add("hide");
-
+    
     questionContainer.classList.remove("hide");
-
+    
     let startAgainMessage = document.createElement("h2");
     let startAgainText =
-      "404 error. \n This button is not working right now. \n Click the refresh button on your browser to start over.";
+    "404 error. \n This button is not working right now. \n Click the refresh button... \n Just kidding... ";
     startAgainMessage.innerText = startAgainText;
     document.getElementById("questionContainer").appendChild(startAgainMessage);
+    
   }
+  setTimeout(()=> {location.reload()}, 5000)
 }
+
+
 
 //the below code isnt working. it is supposed to make it so that the i++ only happens once
 // setTimeout(() => {
-//   parent.removeEventListener("click", checkAnswer)
-// }, 100);
-// Another way to try this is with the below code
-// {once=true}
+  //   parent.removeEventListener("click", checkAnswer)
+  // }, 100);
+  // Another way to try this is with the below code
+  // {once=true}
