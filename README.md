@@ -18,11 +18,12 @@ I used JavaScript to program the game.
 - I also used at least one arrow function, used the forEach function, used the Increment Operator, used at least one promise, and more.
 - I also accessed and updated the DOM to create elements and to add and remove classes.
 ### UX/UI
-- For the colors in the game, I used the website https://colorable.jxnblk.com/ to ensure that the contrast of the colors on the game pass the WCAG accessibility guidelines, which can be found at https://www.w3.org/TR/WCAG20/#visual-audio-contrast.
-- The css file is set up alphabetically and the more specific class and id styles are at the bottom. 
+- I styled the game responsive to different screen sizes using flexbox. I also styled it mobile-first at 600 px wide. 
 - I used the modern font-family 'system-ui' because it is a familiar font that is used on numerous Apple products.
+- The css file is set up alphabetically and the more specific class and id styles are at the bottom. 
 - I used one or two inline styles in the html file do demonstrate that I know how to use it.
 - I used css @keyframes to create animations to create interest, the loading of the question, and to make the answer and next buttons responsive when hovering. 
+- For the colors in the game, I used the website https://colorable.jxnblk.com/ to ensure that the contrast of the colors on the game pass the WCAG accessibility guidelines, which can be found at https://www.w3.org/TR/WCAG20/#visual-audio-contrast.
 
 ### What's good
 - The biggest challenge was making the code DRY, and I believe I was able to achieve this. 
