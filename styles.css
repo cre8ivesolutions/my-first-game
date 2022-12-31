@@ -33,6 +33,13 @@ h1 {
 h1, h2, h3, h4{
   margin: .75em;
 }
+h3{
+  transform: scale(1, 1) rotate(1080deg);
+  animation-name: quizImg;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: step-start;
+}
 hr {
   max-width: 80vw;
 }

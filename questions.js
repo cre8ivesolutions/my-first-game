@@ -289,7 +289,7 @@ function displayFinalPage() {
     "404 error. \n This button is not working right now. \n Click the refresh button... \n Just kidding... ";
     startAgainMessage.innerText = startAgainText;
     document.getElementById("questionContainer").appendChild(startAgainMessage);
-    setTimeout(()=> {location.reload()}, 3500)
+    setTimeout(()=> {location.reload()}, 4000)
   }
 }
 
